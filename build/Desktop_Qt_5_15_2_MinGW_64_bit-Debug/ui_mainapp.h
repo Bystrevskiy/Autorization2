@@ -15,8 +15,6 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenu>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QToolBar>
@@ -28,27 +26,39 @@ class Ui_MainApp
 {
 public:
     QAction *actionProducts;
+    QAction *actionMessages;
+    QAction *actionPersonnel;
     QWidget *centralwidget;
     QTableWidget *tableWidget;
-    QLabel *photo;
-    QMenuBar *menubar;
-    QMenu *menuProducts;
-    QMenu *menuSearch;
-    QMenu *menuPersonnel;
+    QLabel *label;
     QStatusBar *statusbar;
+    QToolBar *toolBar_2;
+    QToolBar *toolBar_3;
     QToolBar *toolBar;
 
     void setupUi(QMainWindow *MainApp)
     {
         if (MainApp->objectName().isEmpty())
             MainApp->setObjectName(QString::fromUtf8("MainApp"));
-        MainApp->resize(980, 712);
+        MainApp->resize(1920, 1080);
         actionProducts = new QAction(MainApp);
         actionProducts->setObjectName(QString::fromUtf8("actionProducts"));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/img/icons8-\320\277\320\260\320\277\320\272\320\260-\321\200\320\260\321\201\321\210\320\270\321\200\320\265\320\275\320\270\320\271-50.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionProducts->setIcon(icon);
         actionProducts->setMenuRole(QAction::NoRole);
+        actionMessages = new QAction(MainApp);
+        actionMessages->setObjectName(QString::fromUtf8("actionMessages"));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/img/icons8-\320\272\320\276\320\275\320\262\320\265\321\200\321\202-50.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionMessages->setIcon(icon1);
+        actionMessages->setMenuRole(QAction::NoRole);
+        actionPersonnel = new QAction(MainApp);
+        actionPersonnel->setObjectName(QString::fromUtf8("actionPersonnel"));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/img/icons8-\320\277\320\276\320\273\321\214\320\267\320\276\320\262\320\260\321\202\320\265\320\273\320\270-50.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionPersonnel->setIcon(icon2);
+        actionPersonnel->setMenuRole(QAction::NoRole);
         centralwidget = new QWidget(MainApp);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         tableWidget = new QTableWidget(centralwidget);
@@ -69,33 +79,30 @@ public:
         QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(6, __qtablewidgetitem6);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
-        tableWidget->setGeometry(QRect(10, 0, 941, 631));
+        tableWidget->setGeometry(QRect(10, 30, 1920, 1000));
         tableWidget->horizontalHeader()->setStretchLastSection(true);
-        photo = new QLabel(centralwidget);
-        photo->setObjectName(QString::fromUtf8("photo"));
-        photo->setGeometry(QRect(300, 120, 361, 371));
+        label = new QLabel(centralwidget);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(40, 420, 1631, 151));
+        label->setStyleSheet(QString::fromUtf8("font: 36pt \"Segoe UI\";\n"
+"color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(255, 255, 255, 255), stop:0.373979 rgba(255, 255, 255, 255), stop:0.373991 rgba(33, 30, 255, 255), stop:0.624018 rgba(33, 30, 255, 255), stop:0.624043 rgba(255, 0, 0, 255), stop:1 rgba(255, 0, 0, 255));"));
         MainApp->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(MainApp);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 980, 25));
-        menuProducts = new QMenu(menubar);
-        menuProducts->setObjectName(QString::fromUtf8("menuProducts"));
-        menuSearch = new QMenu(menubar);
-        menuSearch->setObjectName(QString::fromUtf8("menuSearch"));
-        menuPersonnel = new QMenu(menubar);
-        menuPersonnel->setObjectName(QString::fromUtf8("menuPersonnel"));
-        MainApp->setMenuBar(menubar);
         statusbar = new QStatusBar(MainApp);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainApp->setStatusBar(statusbar);
+        toolBar_2 = new QToolBar(MainApp);
+        toolBar_2->setObjectName(QString::fromUtf8("toolBar_2"));
+        MainApp->addToolBar(Qt::BottomToolBarArea, toolBar_2);
+        toolBar_3 = new QToolBar(MainApp);
+        toolBar_3->setObjectName(QString::fromUtf8("toolBar_3"));
+        MainApp->addToolBar(Qt::TopToolBarArea, toolBar_3);
         toolBar = new QToolBar(MainApp);
         toolBar->setObjectName(QString::fromUtf8("toolBar"));
         MainApp->addToolBar(Qt::TopToolBarArea, toolBar);
 
-        menubar->addAction(menuProducts->menuAction());
-        menubar->addAction(menuSearch->menuAction());
-        menubar->addAction(menuPersonnel->menuAction());
         toolBar->addAction(actionProducts);
+        toolBar->addAction(actionMessages);
+        toolBar->addAction(actionPersonnel);
 
         retranslateUi(MainApp);
 
@@ -108,6 +115,14 @@ public:
         actionProducts->setText(QCoreApplication::translate("MainApp", "Products", nullptr));
 #if QT_CONFIG(tooltip)
         actionProducts->setToolTip(QCoreApplication::translate("MainApp", "Products", nullptr));
+#endif // QT_CONFIG(tooltip)
+        actionMessages->setText(QCoreApplication::translate("MainApp", "Messages", nullptr));
+#if QT_CONFIG(tooltip)
+        actionMessages->setToolTip(QCoreApplication::translate("MainApp", "Messages", nullptr));
+#endif // QT_CONFIG(tooltip)
+        actionPersonnel->setText(QCoreApplication::translate("MainApp", "Personnel", nullptr));
+#if QT_CONFIG(tooltip)
+        actionPersonnel->setToolTip(QCoreApplication::translate("MainApp", "Personnel", nullptr));
 #endif // QT_CONFIG(tooltip)
         QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("MainApp", "FIO", nullptr));
@@ -123,10 +138,9 @@ public:
         ___qtablewidgetitem5->setText(QCoreApplication::translate("MainApp", "New Column", nullptr));
         QTableWidgetItem *___qtablewidgetitem6 = tableWidget->horizontalHeaderItem(6);
         ___qtablewidgetitem6->setText(QCoreApplication::translate("MainApp", "New Column", nullptr));
-        photo->setText(QString());
-        menuProducts->setTitle(QCoreApplication::translate("MainApp", "Products", nullptr));
-        menuSearch->setTitle(QCoreApplication::translate("MainApp", "Search", nullptr));
-        menuPersonnel->setTitle(QCoreApplication::translate("MainApp", "Personnel", nullptr));
+        label->setText(QString());
+        toolBar_2->setWindowTitle(QCoreApplication::translate("MainApp", "toolBar_2", nullptr));
+        toolBar_3->setWindowTitle(QCoreApplication::translate("MainApp", "toolBar_3", nullptr));
         toolBar->setWindowTitle(QCoreApplication::translate("MainApp", "toolBar", nullptr));
     } // retranslateUi
 

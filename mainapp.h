@@ -23,6 +23,12 @@ public:
 private slots:
     void on_tableWidget_cellDoubleClicked(int row, int column);
 
+    void on_actionProducts_triggered();
+
+    void on_actionMessages_triggered();
+
+    void on_actionPersonnel_triggered();
+
 private:
     Ui::MainApp *ui;
     ShowInfo *showinfo = nullptr;

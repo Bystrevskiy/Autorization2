@@ -35,11 +35,11 @@ void MainWindow::on_pushButton_clicked()
     QString password = ui->lineEdit_2->text();
 
     // Предположим, у вас есть ожидаемые значения логина и пароля
-    QString expectedLogin = "Login";
-    QString expectedPassword = "Password";
+    QString expectedLoginAleksey = "AAB";
+    QString expectedPasswordAleksey = "300504";
 
     // Проверяем введенные логин и пароль
-    if (login == expectedLogin && password == expectedPassword)
+    if (login == expectedLoginAleksey && password == expectedPasswordAleksey)
     {
         QSettings settings("MyCompany", "MyApp");
         settings.setValue("RememberMe", ui->checkBox->isChecked());

@@ -21,7 +21,7 @@ MainApp::MainApp(QWidget *parent)
     db.setDatabaseName("C:/ACS/Base/ACS.FDB");
     db.setUserName("ADM");
     db.setPassword("700");
-    db.setPort(3050);
+    // db.setPort(3050);
 
     if (!db.open()) {
         QMessageBox::critical(this, "Ошибка соединения", "Не удалось подключиться к базе данных.");
@@ -142,3 +142,24 @@ void MainApp::on_tableWidget_cellDoubleClicked(int row, int /*column*/)
 
     db.close();
 }
+
+void MainApp::on_actionProducts_triggered()
+{
+    ui-> tableWidget -> hide();
+    ui-> label->setText("Работает");
+}
+
+
+void MainApp::on_actionMessages_triggered()
+{
+    ui-> tableWidget -> hide();
+    ui-> label->setText("ПРИШЛО СООБЩЕНИЕ ОТ АРТУРЧИКА");
+}
+
+
+void MainApp::on_actionPersonnel_triggered()
+{
+    ui->label->setText("");
+    ui->tableWidget->show();
+}
+

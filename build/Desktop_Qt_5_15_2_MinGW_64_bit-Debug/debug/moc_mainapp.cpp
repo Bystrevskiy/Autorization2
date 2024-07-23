@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainApp_t {
-    QByteArrayData data[16];
-    char stringdata0[139];
+    QByteArrayData data[19];
+    char stringdata0[224];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -47,14 +47,19 @@ QT_MOC_LITERAL(11, 75, 10), // "tablenomer"
 QT_MOC_LITERAL(12, 86, 8), // "doljnost"
 QT_MOC_LITERAL(13, 95, 32), // "on_tableWidget_cellDoubleClicked"
 QT_MOC_LITERAL(14, 128, 3), // "row"
-QT_MOC_LITERAL(15, 132, 6) // "column"
+QT_MOC_LITERAL(15, 132, 6), // "column"
+QT_MOC_LITERAL(16, 139, 27), // "on_actionProducts_triggered"
+QT_MOC_LITERAL(17, 167, 27), // "on_actionMessages_triggered"
+QT_MOC_LITERAL(18, 195, 28) // "on_actionPersonnel_triggered"
 
     },
     "MainApp\0signal\0\0a\0signalname\0name\0"
     "mobilephone\0mail\0department\0car\0"
     "QString&\0tablenomer\0doljnost\0"
     "on_tableWidget_cellDoubleClicked\0row\0"
-    "column"
+    "column\0on_actionProducts_triggered\0"
+    "on_actionMessages_triggered\0"
+    "on_actionPersonnel_triggered"
 };
 #undef QT_MOC_LITERAL
 
@@ -64,7 +69,7 @@ static const uint qt_meta_data_MainApp[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -72,11 +77,14 @@ static const uint qt_meta_data_MainApp[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   29,    2, 0x06 /* Public */,
-       4,    7,   32,    2, 0x06 /* Public */,
+       1,    1,   44,    2, 0x06 /* Public */,
+       4,    7,   47,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      13,    2,   47,    2, 0x08 /* Private */,
+      13,    2,   62,    2, 0x08 /* Private */,
+      16,    0,   67,    2, 0x08 /* Private */,
+      17,    0,   68,    2, 0x08 /* Private */,
+      18,    0,   69,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QPixmap,    3,
@@ -84,6 +92,9 @@ static const uint qt_meta_data_MainApp[] = {
 
  // slots: parameters
     QMetaType::Void, QMetaType::Int, QMetaType::Int,   14,   15,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -97,6 +108,9 @@ void MainApp::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 0: _t->signal((*reinterpret_cast< QPixmap(*)>(_a[1]))); break;
         case 1: _t->signalname((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])),(*reinterpret_cast< QString(*)>(_a[5])),(*reinterpret_cast< QString(*)>(_a[6])),(*reinterpret_cast< QString(*)>(_a[7]))); break;
         case 2: _t->on_tableWidget_cellDoubleClicked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 3: _t->on_actionProducts_triggered(); break;
+        case 4: _t->on_actionMessages_triggered(); break;
+        case 5: _t->on_actionPersonnel_triggered(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -147,13 +161,13 @@ int MainApp::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 6)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 3;
+        _id -= 6;
     }
     return _id;
 }
