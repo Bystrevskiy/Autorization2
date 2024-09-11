@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QTimeEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -37,6 +38,11 @@ public:
     QLabel *label_14;
     QLabel *label_4;
     QLabel *label_6;
+    QLabel *label_16;
+    QLabel *label_17;
+    QLabel *label_18;
+    QTimeEdit *timeEdit;
+    QLabel *label_19;
 
     void setupUi(QWidget *ShowInfo)
     {
@@ -139,8 +145,34 @@ public:
 
         label_6 = new QLabel(ShowInfo);
         label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(60, 360, 719, 42));
+        label_6->setGeometry(QRect(40, 370, 321, 42));
         label_6->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        label_16 = new QLabel(ShowInfo);
+        label_16->setObjectName(QString::fromUtf8("label_16"));
+        label_16->setGeometry(QRect(720, 370, 171, 44));
+        label_16->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        label_17 = new QLabel(ShowInfo);
+        label_17->setObjectName(QString::fromUtf8("label_17"));
+        label_17->setGeometry(QRect(380, 370, 131, 44));
+        label_17->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        label_18 = new QLabel(ShowInfo);
+        label_18->setObjectName(QString::fromUtf8("label_18"));
+        label_18->setGeometry(QRect(540, 370, 161, 44));
+        label_18->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        timeEdit = new QTimeEdit(ShowInfo);
+        timeEdit->setObjectName(QString::fromUtf8("timeEdit"));
+        timeEdit->setGeometry(QRect(720, 420, 118, 29));
+        timeEdit->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);\n"
+""));
+        label_19 = new QLabel(ShowInfo);
+        label_19->setObjectName(QString::fromUtf8("label_19"));
+        label_19->setGeometry(QRect(970, 370, 171, 44));
+        label_19->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
 "color: rgb(255, 255, 255);"));
 
         retranslateUi(ShowInfo);
@@ -164,6 +196,10 @@ public:
         label_14->setText(QCoreApplication::translate("ShowInfo", "\320\230\320\274\320\265\320\271\320\273", nullptr));
         label_4->setText(QCoreApplication::translate("ShowInfo", "\320\234\320\276\320\261\320\270\320\273\321\214\320\275\321\213\320\271 \321\202\320\265\320\273\320\265\321\204\320\276\320\275", nullptr));
         label_6->setText(QCoreApplication::translate("ShowInfo", "label_6", nullptr));
+        label_16->setText(QCoreApplication::translate("ShowInfo", "label_16", nullptr));
+        label_17->setText(QCoreApplication::translate("ShowInfo", "\320\222\321\205\320\276\320\264/\320\222\321\213\321\205\320\276\320\264", nullptr));
+        label_18->setText(QCoreApplication::translate("ShowInfo", "label_18", nullptr));
+        label_19->setText(QCoreApplication::translate("ShowInfo", "label_19", nullptr));
     } // retranslateUi
 
 };

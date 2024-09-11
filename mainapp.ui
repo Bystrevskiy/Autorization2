@@ -17,8 +17,8 @@
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>30</y>
+      <x>0</x>
+      <y>0</y>
       <width>1920</width>
       <height>1000</height>
      </rect>
@@ -116,6 +116,7 @@ color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(255, 255, 255, 255)
    <addaction name="actionProducts"/>
    <addaction name="actionMessages"/>
    <addaction name="actionPersonnel"/>
+   <addaction name="separator"/>
   </widget>
   <action name="actionProducts">
    <property name="icon">

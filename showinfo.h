@@ -22,7 +22,7 @@ protected:
     void closeEvent(QCloseEvent *event) override;
 public slots:
     void slot(QPixmap a);
-    void slotname(QString name, QString mobilephone, QString mail, QString department, QString car, QString tablenomer, QString doljnost);
+    void slotname(QString name, QString mobilephone, QString mail, QString department, QString car, QString tablenomer, QString doljnost, QString lasttime, QString lastdate);
 
 
 };

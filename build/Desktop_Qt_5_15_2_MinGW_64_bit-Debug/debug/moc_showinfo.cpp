@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_ShowInfo_t {
-    QByteArrayData data[12];
-    char stringdata0[83];
+    QByteArrayData data[14];
+    char stringdata0[101];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -43,12 +43,14 @@ QT_MOC_LITERAL(7, 43, 4), // "mail"
 QT_MOC_LITERAL(8, 48, 10), // "department"
 QT_MOC_LITERAL(9, 59, 3), // "car"
 QT_MOC_LITERAL(10, 63, 10), // "tablenomer"
-QT_MOC_LITERAL(11, 74, 8) // "doljnost"
+QT_MOC_LITERAL(11, 74, 8), // "doljnost"
+QT_MOC_LITERAL(12, 83, 8), // "lasttime"
+QT_MOC_LITERAL(13, 92, 8) // "lastdate"
 
     },
     "ShowInfo\0slot\0\0a\0slotname\0name\0"
     "mobilephone\0mail\0department\0car\0"
-    "tablenomer\0doljnost"
+    "tablenomer\0doljnost\0lasttime\0lastdate"
 };
 #undef QT_MOC_LITERAL
 
@@ -67,11 +69,11 @@ static const uint qt_meta_data_ShowInfo[] = {
 
  // slots: name, argc, parameters, tag, flags
        1,    1,   24,    2, 0x0a /* Public */,
-       4,    7,   27,    2, 0x0a /* Public */,
+       4,    9,   27,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QPixmap,    3,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,    5,    6,    7,    8,    9,   10,   11,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,    5,    6,    7,    8,    9,   10,   11,   12,   13,
 
        0        // eod
 };
@@ -83,7 +85,7 @@ void ShowInfo::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->slot((*reinterpret_cast< QPixmap(*)>(_a[1]))); break;
-        case 1: _t->slotname((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])),(*reinterpret_cast< QString(*)>(_a[5])),(*reinterpret_cast< QString(*)>(_a[6])),(*reinterpret_cast< QString(*)>(_a[7]))); break;
+        case 1: _t->slotname((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])),(*reinterpret_cast< QString(*)>(_a[5])),(*reinterpret_cast< QString(*)>(_a[6])),(*reinterpret_cast< QString(*)>(_a[7])),(*reinterpret_cast< QString(*)>(_a[8])),(*reinterpret_cast< QString(*)>(_a[9]))); break;
         default: ;
         }
     }

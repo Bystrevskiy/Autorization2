@@ -79,7 +79,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(6, __qtablewidgetitem6);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
-        tableWidget->setGeometry(QRect(10, 30, 1920, 1000));
+        tableWidget->setGeometry(QRect(0, 0, 1920, 1000));
         tableWidget->horizontalHeader()->setStretchLastSection(true);
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
@@ -103,6 +103,7 @@ public:
         toolBar->addAction(actionProducts);
         toolBar->addAction(actionMessages);
         toolBar->addAction(actionPersonnel);
+        toolBar->addSeparator();
 
         retranslateUi(MainApp);
 

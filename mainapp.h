@@ -35,7 +35,7 @@ private:
 
 signals:
     void signal(QPixmap a);
-    void signalname(QString name, QString mobilephone, QString mail, QString department, QString car, QString &tablenomer, QString &doljnost);
+    void signalname(QString name, QString mobilephone, QString mail, QString department, QString car, QString &tablenomer, QString &doljnost, QString &lasttime, QString &lastdate);
 };
 
 #endif // MAINAPP_H

@@ -21,7 +21,10 @@ MainApp::MainApp(QWidget *parent)
     db.setDatabaseName("C:/ACS/Base/ACS.FDB");
     db.setUserName("ADM");
     db.setPassword("700");
-    // db.setPort(3050);
+    // db.setDatabaseName("C:/ibexpert/ACS.FDB");
+    // db.setUserName("SYSDBA");
+    // db.setPassword("masterkey");
+    db.setPort(3050);
 
     if (!db.open()) {
         QMessageBox::critical(this, "Ошибка соединения", "Не удалось подключиться к базе данных.");
@@ -80,6 +83,9 @@ void MainApp::on_tableWidget_cellDoubleClicked(int row, int /*column*/)
     db.setUserName("ADM");
     db.setPassword("700");
     db.setPort(3050);
+    // db.setDatabaseName("C:/ibexpert/ACS.FDB");
+    // db.setUserName("SYSDBA");
+    // db.setPassword("masterkey");
 
     if (!db.open()) {
         QMessageBox::critical(this, "Ошибка соединения", "Не удалось подключиться к базе данных.");
@@ -110,9 +116,9 @@ void MainApp::on_tableWidget_cellDoubleClicked(int row, int /*column*/)
     {
         automobile = "нет автомобиля";
     }
-    QString tabelnomer, doljnost;
+    QString tabelnomer, doljnost, lasttime, lastdate;
     QSqlQuery query;
-    query.prepare("SELECT FOTO, TABELNOMER, DOLJNOST FROM PERSONNEL WHERE FIO = :fio");
+    query.prepare("SELECT FOTO, TABELNOMER, DOLJNOST, LASTTIME, LASTDATE FROM PERSONNEL WHERE FIO = :fio");
     query.bindValue(":fio", fio);
 
     if (query.exec() && query.next()) {
@@ -127,6 +133,8 @@ void MainApp::on_tableWidget_cellDoubleClicked(int row, int /*column*/)
         // }
 
         doljnost = query.value(2).toString();
+        lasttime = query.value(3).toString();
+        lastdate = query.value(4).toString();
         QPixmap pixmap;
         if (!pixmap.loadFromData(imageData)) {
             qDebug() << "Ошибка загрузки изображения из данных";
@@ -135,7 +143,7 @@ void MainApp::on_tableWidget_cellDoubleClicked(int row, int /*column*/)
 
         showinfo->show();
         emit signal(pixmap);
-        emit signalname(fio, mobile, department, mail, automobile, tabelnomer, doljnost);
+        emit signalname(fio, mobile, department, mail, automobile, tabelnomer, doljnost, lasttime, lastdate);
     } else {
         qDebug() << "Ошибка выполнения запроса:" << query.lastError().text();
     }
@@ -153,7 +161,7 @@ void MainApp::on_actionProducts_triggered()
 void MainApp::on_actionMessages_triggered()
 {
     ui-> tableWidget -> hide();
-    ui-> label->setText("ПРИШЛО СООБЩЕНИЕ ОТ АРТУРЧИКА");
+    ui-> label->setText("Почта");
 }
 
 

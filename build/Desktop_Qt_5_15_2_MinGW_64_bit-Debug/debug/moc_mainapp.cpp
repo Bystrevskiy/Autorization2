@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainApp_t {
-    QByteArrayData data[19];
-    char stringdata0[224];
+    QByteArrayData data[21];
+    char stringdata0[242];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -45,19 +45,21 @@ QT_MOC_LITERAL(9, 62, 3), // "car"
 QT_MOC_LITERAL(10, 66, 8), // "QString&"
 QT_MOC_LITERAL(11, 75, 10), // "tablenomer"
 QT_MOC_LITERAL(12, 86, 8), // "doljnost"
-QT_MOC_LITERAL(13, 95, 32), // "on_tableWidget_cellDoubleClicked"
-QT_MOC_LITERAL(14, 128, 3), // "row"
-QT_MOC_LITERAL(15, 132, 6), // "column"
-QT_MOC_LITERAL(16, 139, 27), // "on_actionProducts_triggered"
-QT_MOC_LITERAL(17, 167, 27), // "on_actionMessages_triggered"
-QT_MOC_LITERAL(18, 195, 28) // "on_actionPersonnel_triggered"
+QT_MOC_LITERAL(13, 95, 8), // "lasttime"
+QT_MOC_LITERAL(14, 104, 8), // "lastdate"
+QT_MOC_LITERAL(15, 113, 32), // "on_tableWidget_cellDoubleClicked"
+QT_MOC_LITERAL(16, 146, 3), // "row"
+QT_MOC_LITERAL(17, 150, 6), // "column"
+QT_MOC_LITERAL(18, 157, 27), // "on_actionProducts_triggered"
+QT_MOC_LITERAL(19, 185, 27), // "on_actionMessages_triggered"
+QT_MOC_LITERAL(20, 213, 28) // "on_actionPersonnel_triggered"
 
     },
     "MainApp\0signal\0\0a\0signalname\0name\0"
     "mobilephone\0mail\0department\0car\0"
-    "QString&\0tablenomer\0doljnost\0"
-    "on_tableWidget_cellDoubleClicked\0row\0"
-    "column\0on_actionProducts_triggered\0"
+    "QString&\0tablenomer\0doljnost\0lasttime\0"
+    "lastdate\0on_tableWidget_cellDoubleClicked\0"
+    "row\0column\0on_actionProducts_triggered\0"
     "on_actionMessages_triggered\0"
     "on_actionPersonnel_triggered"
 };
@@ -78,20 +80,20 @@ static const uint qt_meta_data_MainApp[] = {
 
  // signals: name, argc, parameters, tag, flags
        1,    1,   44,    2, 0x06 /* Public */,
-       4,    7,   47,    2, 0x06 /* Public */,
+       4,    9,   47,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      13,    2,   62,    2, 0x08 /* Private */,
-      16,    0,   67,    2, 0x08 /* Private */,
-      17,    0,   68,    2, 0x08 /* Private */,
-      18,    0,   69,    2, 0x08 /* Private */,
+      15,    2,   66,    2, 0x08 /* Private */,
+      18,    0,   71,    2, 0x08 /* Private */,
+      19,    0,   72,    2, 0x08 /* Private */,
+      20,    0,   73,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QPixmap,    3,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, 0x80000000 | 10, 0x80000000 | 10,    5,    6,    7,    8,    9,   11,   12,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, 0x80000000 | 10, 0x80000000 | 10, 0x80000000 | 10, 0x80000000 | 10,    5,    6,    7,    8,    9,   11,   12,   13,   14,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,   14,   15,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   16,   17,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -106,7 +108,7 @@ void MainApp::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->signal((*reinterpret_cast< QPixmap(*)>(_a[1]))); break;
-        case 1: _t->signalname((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])),(*reinterpret_cast< QString(*)>(_a[5])),(*reinterpret_cast< QString(*)>(_a[6])),(*reinterpret_cast< QString(*)>(_a[7]))); break;
+        case 1: _t->signalname((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])),(*reinterpret_cast< QString(*)>(_a[5])),(*reinterpret_cast< QString(*)>(_a[6])),(*reinterpret_cast< QString(*)>(_a[7])),(*reinterpret_cast< QString(*)>(_a[8])),(*reinterpret_cast< QString(*)>(_a[9]))); break;
         case 2: _t->on_tableWidget_cellDoubleClicked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 3: _t->on_actionProducts_triggered(); break;
         case 4: _t->on_actionMessages_triggered(); break;
@@ -123,7 +125,7 @@ void MainApp::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
             }
         }
         {
-            using _t = void (MainApp::*)(QString , QString , QString , QString , QString , QString & , QString & );
+            using _t = void (MainApp::*)(QString , QString , QString , QString , QString , QString & , QString & , QString & , QString & );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainApp::signalname)) {
                 *result = 1;
                 return;
@@ -180,9 +182,9 @@ void MainApp::signal(QPixmap _t1)
 }
 
 // SIGNAL 1
-void MainApp::signalname(QString _t1, QString _t2, QString _t3, QString _t4, QString _t5, QString & _t6, QString & _t7)
+void MainApp::signalname(QString _t1, QString _t2, QString _t3, QString _t4, QString _t5, QString & _t6, QString & _t7, QString & _t8, QString & _t9)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t4))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t5))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t6))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t7))) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t4))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t5))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t6))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t7))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t8))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t9))) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 QT_WARNING_POP

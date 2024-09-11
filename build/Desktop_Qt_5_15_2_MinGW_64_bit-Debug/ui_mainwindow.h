@@ -44,11 +44,12 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(290, 320, 190, 51));
+        pushButton->setGeometry(QRect(280, 310, 221, 61));
         pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    /* \320\236\321\201\320\275\320\276\320\262\320\275\320\276\320\271 \321\201\321\202\320\270\320\273\321\214 \320\272\320\275\320\276\320\277\320\272\320\270 */\n"
 "    appearance: none;\n"
 "    border: 0;\n"
+"	border-radius: 27px;\n"
 "	\n"
 "	/*background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0610329 rgba(4,83,125, 255), stop:0.629108 rgba(14,120,125, 255));*/\n"
 "	background-color: rgb(4, 83, 125);\n"
@@ -61,10 +62,10 @@ public:
 "QPushButton:pressed {\n"
 "    /* \320\241\321\202\320\270\320\273\321\214 \320\272\320\275\320\276\320\277\320\272\320\270 \320\277\321\200\320\270 \320\275\320\260\320\266\320\260\321\202\320\270\320\270 */\n"
 "     /* \320\235\320\260\320\277\321\200\320\270\320\274\320\265\321\200, \320\270\320\267\320\274\320\265\320\275\321\217\320\265\320\274 \321\206\320\262\320\265\321\202 \321\204\320\276\320\275\320\260 */\n"
-"	/*background-color: rgb(121,119,143);*/\n"
+"	/*background-color: "
+                        "rgb(121,119,143);*/\n"
 "	\n"
-""
-                        "	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.653, y2:0.596591, stop:0 rgba(4, 83, 125, 255), stop:0.99061 rgba(121, 119, 143, 255));\n"
+"	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.653, y2:0.596591, stop:0 rgba(4, 83, 125, 255), stop:0.99061 rgba(121, 119, 143, 255));\n"
 "	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(4, 83, 125, 255), stop:1 rgba(121, 119, 143, 255));\n"
 "    box-shadow: inset 0 0 0 4px #cbd6ee; /* \320\224\320\276\320\261\320\260\320\262\320\273\321\217\320\265\320\274 \321\215\321\204\321\204\320\265\320\272\321\202 \"\320\277\321\200\320\276\320\264\320\260\320\262\320\273\320\270\320\262\320\260\320\275\320\270\321\217\" */\n"
 "}"));

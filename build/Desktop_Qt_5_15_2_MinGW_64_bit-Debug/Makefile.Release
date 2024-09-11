@@ -260,6 +260,7 @@ release/moc_mainapp.cpp: ../../mainapp.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtoolbar.h \
 		../../showinfo.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
 		release/moc_predefs.h \
 		C:/Qt/5.15.2/mingw81_64/bin/moc.exe
 	C:\Qt\5.15.2\mingw81_64\bin\moc.exe $(DEFINES) --include C:/Users/bystr/Documents/Autorization/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/5.15.2/mingw81_64/mkspecs/win32-g++ -IC:/Users/bystr/Documents/Autorization -IC:/Qt/5.15.2/mingw81_64/include -IC:/Qt/5.15.2/mingw81_64/include/QtWidgets -IC:/Qt/5.15.2/mingw81_64/include/QtGui -IC:/Qt/5.15.2/mingw81_64/include/QtANGLE -IC:/Qt/5.15.2/mingw81_64/include/QtSql -IC:/Qt/5.15.2/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\..\mainapp.h -o release\moc_mainapp.cpp
@@ -381,6 +382,7 @@ release/moc_mainwindow.cpp: ../../mainwindow.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtoolbar.h \
 		../../showinfo.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
 		release/moc_predefs.h \
 		C:/Qt/5.15.2/mingw81_64/bin/moc.exe
 	C:\Qt\5.15.2\mingw81_64\bin\moc.exe $(DEFINES) --include C:/Users/bystr/Documents/Autorization/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/5.15.2/mingw81_64/mkspecs/win32-g++ -IC:/Users/bystr/Documents/Autorization -IC:/Qt/5.15.2/mingw81_64/include -IC:/Qt/5.15.2/mingw81_64/include/QtWidgets -IC:/Qt/5.15.2/mingw81_64/include/QtGui -IC:/Qt/5.15.2/mingw81_64/include/QtANGLE -IC:/Qt/5.15.2/mingw81_64/include/QtSql -IC:/Qt/5.15.2/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\..\mainwindow.h -o release\moc_mainwindow.cpp
@@ -599,6 +601,7 @@ release/moc_showinfo.cpp: ../../showinfo.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
 		release/moc_predefs.h \
 		C:/Qt/5.15.2/mingw81_64/bin/moc.exe
 	C:\Qt\5.15.2\mingw81_64\bin\moc.exe $(DEFINES) --include C:/Users/bystr/Documents/Autorization/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/5.15.2/mingw81_64/mkspecs/win32-g++ -IC:/Users/bystr/Documents/Autorization -IC:/Qt/5.15.2/mingw81_64/include -IC:/Qt/5.15.2/mingw81_64/include/QtWidgets -IC:/Qt/5.15.2/mingw81_64/include/QtGui -IC:/Qt/5.15.2/mingw81_64/include/QtANGLE -IC:/Qt/5.15.2/mingw81_64/include/QtSql -IC:/Qt/5.15.2/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\..\showinfo.h -o release\moc_showinfo.cpp
@@ -755,6 +758,7 @@ release/main.o: ../../main.cpp ../../mainwindow.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtoolbar.h \
 		../../showinfo.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QApplication \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
@@ -880,6 +884,7 @@ release/mainapp.o: ../../mainapp.cpp ../../mainapp.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtoolbar.h \
 		../../showinfo.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
 		ui_mainapp.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QVariant \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QAction \
@@ -909,32 +914,26 @@ release/mainapp.o: ../../mainapp.cpp ../../mainapp.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qrubberband.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMenu \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QStatusBar \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qstatusbar.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QTableWidget \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtablewidget.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtableview.h \
-		../../dbconnect.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlDatabase \
 		C:/Qt/5.15.2/mingw81_64/include/QtSql/qsqldatabase.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtSql/qtsqlglobal.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtSql/qtsql-config.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlError \
-		C:/Qt/5.15.2/mingw81_64/include/QtSql/qsqlerror.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlQuery \
 		C:/Qt/5.15.2/mingw81_64/include/QtSql/qsqlquery.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlError \
+		C:/Qt/5.15.2/mingw81_64/include/QtSql/qsqlerror.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMessageBox \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdialog.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlRecord \
 		C:/Qt/5.15.2/mingw81_64/include/QtSql/qsqlrecord.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlQueryModel \
-		C:/Qt/5.15.2/mingw81_64/include/QtSql/qsqlquerymodel.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/QStandardItemModel \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qstandarditemmodel.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QTableWidgetItem
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QVector
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainapp.o ..\..\mainapp.cpp
 
 release/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
@@ -1054,6 +1053,7 @@ release/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtoolbar.h \
 		../../showinfo.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
 		ui_mainwindow.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QVariant \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QApplication \
@@ -1077,13 +1077,22 @@ release/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMessageBox \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdialog.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QSettings \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qsettings.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QCoreApplication
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QCoreApplication \
+		C:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlQuery \
+		C:/Qt/5.15.2/mingw81_64/include/QtSql/qsqlquery.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtSql/qtsqlglobal.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtSql/qtsql-config.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtSql/qsqldatabase.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlDatabase \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QDate \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatetime.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlError \
+		C:/Qt/5.15.2/mingw81_64/include/QtSql/qsqlerror.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\..\mainwindow.cpp
 
 release/panel.o: ../../panel.cpp ../../panel.h \
@@ -1350,6 +1359,7 @@ release/showinfo.o: ../../showinfo.cpp ../../showinfo.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
 		ui_showinfo.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QVariant \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QApplication \
@@ -1362,24 +1372,33 @@ release/showinfo.o: ../../showinfo.cpp ../../showinfo.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QTimeEdit \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdatetimeedit.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatetime.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcalendar.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QVBoxLayout \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qboxlayout.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayout.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgridlayout.h \
-		../../dbconnect.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlDatabase \
-		C:/Qt/5.15.2/mingw81_64/include/QtSql/qsqldatabase.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtSql/qtsqlglobal.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtSql/qtsql-config.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlError \
-		C:/Qt/5.15.2/mingw81_64/include/QtSql/qsqlerror.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
-		C:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlQuery \
-		C:/Qt/5.15.2/mingw81_64/include/QtSql/qsqlquery.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMessageBox \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmessagebox.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdialog.h
+		../../mainapp.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qicon.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMenuBar \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmenubar.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmenu.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qaction.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QToolBar \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtoolbar.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/QCloseEvent \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QTime
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\showinfo.o ..\..\showinfo.cpp
 
 release/qrc_resources.o: release/qrc_resources.cpp 
