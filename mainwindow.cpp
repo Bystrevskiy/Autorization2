@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     loadSettings();
     ui->centralwidget->setAttribute(Qt::WA_TranslucentBackground);
     ui->centralwidget->setStyleSheet("backgroung-color: rgba(0,0,0,0);");
-    QPixmap pix("C:/Users/bystr/Documents/Autorization/img/user.png");
+    QPixmap pix(":img/user.png");
     ui->image->setPixmap(pix.scaled(128,128, Qt::KeepAspectRatio, Qt::SmoothTransformation));
     ui->image->setStyleSheet("background-color: transparent;");
 
@@ -71,9 +71,20 @@ void MainWindow::on_pushButton_clicked()
     // Проверка пароля
     if (enteredPassword == birthDateStr) {
         QMessageBox::information(this, "Успех", "Авторизация успешна.");
+        QSettings settings("MyCompany", "MyApp");
+
+        settings.setValue("RememberMe", ui->checkBox->isChecked());
+            if (ui->checkBox->isChecked()) {
+                settings.setValue("Login", enteredLogin);
+                settings.setValue("Password", enteredPassword);
+            } else {
+                // Если чекбокс не выбран, удаляем сохраненные данные
+                settings.remove("Login");
+        settings.remove("Password");}
         this->hide();
         mainapp = new MainApp(this);
         mainapp->show();
+
     } else {
         QMessageBox::critical(this, "Ошибка", "Неверный PERSID или пароль.");
     }
