@@ -29,11 +29,16 @@ private slots:
 
     void on_actionPersonnel_triggered();
 
+    void on_actionAccount_triggered();
+    void hideUnused();
 private:
     Ui::MainApp *ui;
     ShowInfo *showinfo = nullptr;
 
+public slots:
+    void slotAccount(QPixmap &a, QString &name, QString &mobilephone, QString &mail, QString &department, QString &car, QString &tablenomer, QString &doljnost, QString &lasttime, QString &lastdate);
 signals:
+
     void signal(QPixmap a);
     void signalname(QString name, QString mobilephone, QString mail, QString department, QString car, QString &tablenomer, QString &doljnost, QString &lasttime, QString &lastdate);
 };

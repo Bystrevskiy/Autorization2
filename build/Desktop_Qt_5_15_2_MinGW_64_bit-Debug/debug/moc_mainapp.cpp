@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainApp_t {
-    QByteArrayData data[21];
-    char stringdata0[242];
+    QByteArrayData data[25];
+    char stringdata0[301];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -52,7 +52,11 @@ QT_MOC_LITERAL(16, 146, 3), // "row"
 QT_MOC_LITERAL(17, 150, 6), // "column"
 QT_MOC_LITERAL(18, 157, 27), // "on_actionProducts_triggered"
 QT_MOC_LITERAL(19, 185, 27), // "on_actionMessages_triggered"
-QT_MOC_LITERAL(20, 213, 28) // "on_actionPersonnel_triggered"
+QT_MOC_LITERAL(20, 213, 28), // "on_actionPersonnel_triggered"
+QT_MOC_LITERAL(21, 242, 26), // "on_actionAccount_triggered"
+QT_MOC_LITERAL(22, 269, 10), // "hideUnused"
+QT_MOC_LITERAL(23, 280, 11), // "slotAccount"
+QT_MOC_LITERAL(24, 292, 8) // "QPixmap&"
 
     },
     "MainApp\0signal\0\0a\0signalname\0name\0"
@@ -61,7 +65,9 @@ QT_MOC_LITERAL(20, 213, 28) // "on_actionPersonnel_triggered"
     "lastdate\0on_tableWidget_cellDoubleClicked\0"
     "row\0column\0on_actionProducts_triggered\0"
     "on_actionMessages_triggered\0"
-    "on_actionPersonnel_triggered"
+    "on_actionPersonnel_triggered\0"
+    "on_actionAccount_triggered\0hideUnused\0"
+    "slotAccount\0QPixmap&"
 };
 #undef QT_MOC_LITERAL
 
@@ -71,7 +77,7 @@ static const uint qt_meta_data_MainApp[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -79,14 +85,17 @@ static const uint qt_meta_data_MainApp[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   44,    2, 0x06 /* Public */,
-       4,    9,   47,    2, 0x06 /* Public */,
+       1,    1,   59,    2, 0x06 /* Public */,
+       4,    9,   62,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      15,    2,   66,    2, 0x08 /* Private */,
-      18,    0,   71,    2, 0x08 /* Private */,
-      19,    0,   72,    2, 0x08 /* Private */,
-      20,    0,   73,    2, 0x08 /* Private */,
+      15,    2,   81,    2, 0x08 /* Private */,
+      18,    0,   86,    2, 0x08 /* Private */,
+      19,    0,   87,    2, 0x08 /* Private */,
+      20,    0,   88,    2, 0x08 /* Private */,
+      21,    0,   89,    2, 0x08 /* Private */,
+      22,    0,   90,    2, 0x08 /* Private */,
+      23,   10,   91,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QPixmap,    3,
@@ -97,6 +106,9 @@ static const uint qt_meta_data_MainApp[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 24, 0x80000000 | 10, 0x80000000 | 10, 0x80000000 | 10, 0x80000000 | 10, 0x80000000 | 10, 0x80000000 | 10, 0x80000000 | 10, 0x80000000 | 10, 0x80000000 | 10,    3,    5,    6,    7,    8,    9,   11,   12,   13,   14,
 
        0        // eod
 };
@@ -113,6 +125,9 @@ void MainApp::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 3: _t->on_actionProducts_triggered(); break;
         case 4: _t->on_actionMessages_triggered(); break;
         case 5: _t->on_actionPersonnel_triggered(); break;
+        case 6: _t->on_actionAccount_triggered(); break;
+        case 7: _t->hideUnused(); break;
+        case 8: _t->slotAccount((*reinterpret_cast< QPixmap(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])),(*reinterpret_cast< QString(*)>(_a[5])),(*reinterpret_cast< QString(*)>(_a[6])),(*reinterpret_cast< QString(*)>(_a[7])),(*reinterpret_cast< QString(*)>(_a[8])),(*reinterpret_cast< QString(*)>(_a[9])),(*reinterpret_cast< QString(*)>(_a[10]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -163,13 +178,13 @@ int MainApp::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 9;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 9)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 6;
+        _id -= 9;
     }
     return _id;
 }

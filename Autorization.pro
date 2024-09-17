@@ -13,19 +13,16 @@ SOURCES += \
     main.cpp \
     mainapp.cpp \
     mainwindow.cpp \
-    panel.cpp \
     showinfo.cpp
 
 HEADERS += \
     mainapp.h \
     mainwindow.h \
-    panel.h \
     showinfo.h
 
 FORMS += \
     mainapp.ui \
     mainwindow.ui \
-    panel.ui \
     showinfo.ui
 
 # Default rules for deployment.

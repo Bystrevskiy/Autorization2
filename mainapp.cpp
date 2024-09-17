@@ -7,7 +7,8 @@
 #include <QSqlRecord>
 #include <QDebug>
 #include <QVector>
-
+#include <QTime>
+#include <QDate>
 MainApp::MainApp(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainApp)
@@ -15,16 +16,16 @@ MainApp::MainApp(QWidget *parent)
 {
     ui->setupUi(this);
     ui->tableWidget->setEditTriggers(QTableWidget::NoEditTriggers);
-
     QSqlDatabase db = QSqlDatabase::addDatabase("QIBASE");
     db.setHostName("172.18.110.56");
     db.setDatabaseName("C:/ACS/Base/ACS.FDB");
     db.setUserName("ADM");
     db.setPassword("700");
+    db.setPort(3050);
     // db.setDatabaseName("C:/ibexpert/ACS.FDB");
     // db.setUserName("SYSDBA");
     // db.setPassword("masterkey");
-    db.setPort(3050);
+    hideUnused();
 
     if (!db.open()) {
         QMessageBox::critical(this, "Ошибка соединения", "Не удалось подключиться к базе данных.");
@@ -153,21 +154,137 @@ void MainApp::on_tableWidget_cellDoubleClicked(int row, int /*column*/)
 
 void MainApp::on_actionProducts_triggered()
 {
-    ui-> tableWidget -> hide();
+    hideUnused();
     ui-> label->setText("Работает");
 }
 
 
 void MainApp::on_actionMessages_triggered()
 {
-    ui-> tableWidget -> hide();
+    hideUnused();
     ui-> label->setText("Почта");
 }
 
 
 void MainApp::on_actionPersonnel_triggered()
 {
-    ui->label->setText("");
+    hideUnused();
+    // ui->departmentInfo->hide();
+    // ui->carInfo->hide();
+    // ui->dolzhnostInfo->hide();
+    // ui->welcome->hide();
+    // ui->emailImfo->hide();
+    // ui->date->hide();
+    // ui->time->hide();
+    // ui->mobileInfo->hide();
+    // ui->time_to_home->hide();
+    // ui->date->hide();
+    // ui->date_2->hide();
+    // ui->tabelnomer->hide();
+
+
+    // ui->department->hide();
+    // ui->car->hide();
+    // ui->email->hide();
+    // ui->dolzhnost->hide();
+    // ui->fio->hide();
+    // ui->photo->hide();
+    // ui->mobile->hide();
+    // ui->label->setText("");
+
     ui->tableWidget->show();
+}
+
+
+
+void MainApp::on_actionAccount_triggered()
+{
+    //emit signalAccount(pixmap, fio, mobile, department, mail, automobile, tabelnomer, doljnost, lasttime, lastdate);
+    ui->department->show();
+    ui->car->show();
+    ui->email->show();
+    ui->dolzhnost->show();
+    ui->fio->show();
+    ui->photo->show();
+    ui->mobile->show();
+    ui->departmentInfo->show();
+    ui->carInfo->show();
+    ui->dolzhnostInfo->show();
+    ui->welcome->show();
+    ui->emailImfo->show();
+    ui->date->show();
+    ui->time->show();
+    ui->mobileInfo->show();
+    ui->time_to_home->show();
+    ui->date->show();
+    ui->date_2->show();
+    ui->tabelnomer->show();
+    ui->tableWidget->hide();
+}
+
+void MainApp::slotAccount(QPixmap &a, QString &name, QString &mobilephone, QString &mail, QString &department, QString &car, QString &tablenomer, QString &doljnost, QString &lasttime, QString &lastdate)
+{
+    ui->department->setText(department);
+    if (car==""){
+        car = "Нет автомобиля";
+    }
+    ui->car->setText(car);
+    ui->email->setText(mail);
+    ui->dolzhnost->setText(doljnost);
+    ui->fio->setText(name);
+    ui->photo->setPixmap(a);
+    ui->mobile->setText(mobilephone);
+    ui->time->setText(lasttime);
+    ui->date->setText(lastdate);
+    ui->tabelnomer->setText(tablenomer);
+    QTime currentTime = QTime::currentTime();
+    QDate currentDate = QDate::currentDate();
+    // Преобразование строки lasttime в объект QTime с форматом hh:mm:ss
+    QTime lastTime = QTime::fromString(lasttime, "hh:mm:ss");
+    QDate lastDate = QDate::fromString(lastdate, "yyyy.MM.dd");
+    // Вычисление разницы между текущим временем и lasttime в секундах
+    if (currentDate == lastDate) {
+        // Вычисление разницы между текущим временем и lasttime в секундах
+        int secondsDifference = lastTime.secsTo(currentTime);
+
+        // Преобразование секунд в часы, минуты и секунды
+        int hours = secondsDifference / 3600;
+        int minutes = (secondsDifference % 3600) / 60;
+        int seconds = secondsDifference % 60;
+
+        // Форматирование результата
+        QString workDuration = QString("%1:%2:%3")
+                                   .arg(hours, 2, 10, QChar('0'))
+                                   .arg(minutes, 2, 10, QChar('0'))
+                                   .arg(seconds, 2, 10, QChar('0'));
+
+        // Отображение workDuration в label_19
+        ui->time_to_home->setText(workDuration);
+    }
+}
+
+void MainApp::hideUnused(){
+    ui->departmentInfo->hide();
+    ui->carInfo->hide();
+    ui->dolzhnostInfo->hide();
+    ui->welcome->hide();
+    ui->emailImfo->hide();
+    ui->date->hide();
+    ui->time->hide();
+    ui->mobileInfo->hide();
+    ui->time_to_home->hide();
+    ui->date->hide();
+    ui->date_2->hide();
+    ui->tabelnomer->hide();
+
+
+    ui->department->hide();
+    ui->car->hide();
+    ui->email->hide();
+    ui->dolzhnost->hide();
+    ui->fio->hide();
+    ui->photo->hide();
+    ui->mobile->hide();
+    ui->label->hide();
 }
 

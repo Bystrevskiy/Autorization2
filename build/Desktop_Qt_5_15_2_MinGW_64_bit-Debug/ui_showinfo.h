@@ -22,7 +22,6 @@ class Ui_ShowInfo
 {
 public:
     QLabel *photo;
-    QLabel *label;
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_2;
     QLabel *label_12;
@@ -43,6 +42,7 @@ public:
     QLabel *label_18;
     QTimeEdit *timeEdit;
     QLabel *label_19;
+    QLabel *label;
 
     void setupUi(QWidget *ShowInfo)
     {
@@ -52,16 +52,11 @@ public:
         ShowInfo->setStyleSheet(QString::fromUtf8("background-color: rgb(4, 83, 125);"));
         photo = new QLabel(ShowInfo);
         photo->setObjectName(QString::fromUtf8("photo"));
-        photo->setGeometry(QRect(40, 60, 301, 281));
+        photo->setGeometry(QRect(30, 30, 311, 311));
         photo->setStyleSheet(QString::fromUtf8(""));
-        label = new QLabel(ShowInfo);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(20, 10, 561, 41));
-        label->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255);"));
         layoutWidget = new QWidget(ShowInfo);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(590, 40, 721, 251));
+        layoutWidget->setGeometry(QRect(590, 70, 721, 251));
         layoutWidget->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";"));
         verticalLayout_2 = new QVBoxLayout(layoutWidget);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
@@ -103,7 +98,7 @@ public:
 
         layoutWidget1 = new QWidget(ShowInfo);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(360, 40, 221, 251));
+        layoutWidget1->setGeometry(QRect(360, 70, 221, 251));
         layoutWidget1->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";"));
         verticalLayout = new QVBoxLayout(layoutWidget1);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
@@ -155,7 +150,7 @@ public:
 "color: rgb(255, 255, 255);"));
         label_17 = new QLabel(ShowInfo);
         label_17->setObjectName(QString::fromUtf8("label_17"));
-        label_17->setGeometry(QRect(380, 370, 131, 44));
+        label_17->setGeometry(QRect(360, 370, 131, 44));
         label_17->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
 "color: rgb(255, 255, 255);"));
         label_18 = new QLabel(ShowInfo);
@@ -174,6 +169,11 @@ public:
         label_19->setGeometry(QRect(970, 370, 171, 44));
         label_19->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
 "color: rgb(255, 255, 255);"));
+        label = new QLabel(ShowInfo);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(360, 10, 721, 44));
+        label->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
 
         retranslateUi(ShowInfo);
 
@@ -184,7 +184,6 @@ public:
     {
         ShowInfo->setWindowTitle(QCoreApplication::translate("ShowInfo", "Form", nullptr));
         photo->setText(QString());
-        label->setText(QString());
         label_12->setText(QCoreApplication::translate("ShowInfo", "label_12", nullptr));
         label_11->setText(QCoreApplication::translate("ShowInfo", "label_11", nullptr));
         label_15->setText(QCoreApplication::translate("ShowInfo", "label_15", nullptr));
@@ -200,6 +199,7 @@ public:
         label_17->setText(QCoreApplication::translate("ShowInfo", "\320\222\321\205\320\276\320\264/\320\222\321\213\321\205\320\276\320\264", nullptr));
         label_18->setText(QCoreApplication::translate("ShowInfo", "label_18", nullptr));
         label_19->setText(QCoreApplication::translate("ShowInfo", "label_19", nullptr));
+        label->setText(QString());
     } // retranslateUi
 
 };

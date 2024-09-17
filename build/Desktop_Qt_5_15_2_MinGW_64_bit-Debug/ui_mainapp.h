@@ -28,9 +28,28 @@ public:
     QAction *actionProducts;
     QAction *actionMessages;
     QAction *actionPersonnel;
+    QAction *actionAccount;
     QWidget *centralwidget;
     QTableWidget *tableWidget;
+    QLabel *photo;
+    QLabel *welcome;
+    QLabel *fio;
     QLabel *label;
+    QLabel *time;
+    QLabel *date;
+    QLabel *time_to_home;
+    QLabel *date_2;
+    QLabel *tabelnomer;
+    QLabel *mobileInfo;
+    QLabel *departmentInfo;
+    QLabel *carInfo;
+    QLabel *dolzhnostInfo;
+    QLabel *emailImfo;
+    QLabel *dolzhnost;
+    QLabel *car;
+    QLabel *email;
+    QLabel *department;
+    QLabel *mobile;
     QStatusBar *statusbar;
     QToolBar *toolBar_2;
     QToolBar *toolBar_3;
@@ -41,6 +60,7 @@ public:
         if (MainApp->objectName().isEmpty())
             MainApp->setObjectName(QString::fromUtf8("MainApp"));
         MainApp->resize(1920, 1080);
+        MainApp->setStyleSheet(QString::fromUtf8("background-color: rgb(4, 83, 125);"));
         actionProducts = new QAction(MainApp);
         actionProducts->setObjectName(QString::fromUtf8("actionProducts"));
         QIcon icon;
@@ -59,6 +79,12 @@ public:
         icon2.addFile(QString::fromUtf8(":/img/icons8-\320\277\320\276\320\273\321\214\320\267\320\276\320\262\320\260\321\202\320\265\320\273\320\270-50.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionPersonnel->setIcon(icon2);
         actionPersonnel->setMenuRole(QAction::NoRole);
+        actionAccount = new QAction(MainApp);
+        actionAccount->setObjectName(QString::fromUtf8("actionAccount"));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/img/personal_account.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionAccount->setIcon(icon3);
+        actionAccount->setMenuRole(QAction::NoRole);
         centralwidget = new QWidget(MainApp);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         tableWidget = new QTableWidget(centralwidget);
@@ -80,12 +106,100 @@ public:
         tableWidget->setHorizontalHeaderItem(6, __qtablewidgetitem6);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
         tableWidget->setGeometry(QRect(0, 0, 1920, 1000));
+        tableWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         tableWidget->horizontalHeader()->setStretchLastSection(true);
+        photo = new QLabel(centralwidget);
+        photo->setObjectName(QString::fromUtf8("photo"));
+        photo->setGeometry(QRect(20, 90, 331, 311));
+        photo->setStyleSheet(QString::fromUtf8(""));
+        welcome = new QLabel(centralwidget);
+        welcome->setObjectName(QString::fromUtf8("welcome"));
+        welcome->setGeometry(QRect(20, 30, 181, 44));
+        welcome->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        fio = new QLabel(centralwidget);
+        fio->setObjectName(QString::fromUtf8("fio"));
+        fio->setGeometry(QRect(361, 30, 601, 44));
+        fio->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(40, 420, 1631, 151));
-        label->setStyleSheet(QString::fromUtf8("font: 36pt \"Segoe UI\";\n"
-"color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(255, 255, 255, 255), stop:0.373979 rgba(255, 255, 255, 255), stop:0.373991 rgba(33, 30, 255, 255), stop:0.624018 rgba(33, 30, 255, 255), stop:0.624043 rgba(255, 0, 0, 255), stop:1 rgba(255, 0, 0, 255));"));
+        label->setGeometry(QRect(750, 20, 241, 31));
+        time = new QLabel(centralwidget);
+        time->setObjectName(QString::fromUtf8("time"));
+        time->setGeometry(QRect(621, 370, 249, 44));
+        time->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        date = new QLabel(centralwidget);
+        date->setObjectName(QString::fromUtf8("date"));
+        date->setGeometry(QRect(361, 370, 249, 44));
+        date->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        time_to_home = new QLabel(centralwidget);
+        time_to_home->setObjectName(QString::fromUtf8("time_to_home"));
+        time_to_home->setGeometry(QRect(621, 420, 249, 44));
+        time_to_home->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        date_2 = new QLabel(centralwidget);
+        date_2->setObjectName(QString::fromUtf8("date_2"));
+        date_2->setGeometry(QRect(361, 420, 249, 44));
+        date_2->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        tabelnomer = new QLabel(centralwidget);
+        tabelnomer->setObjectName(QString::fromUtf8("tabelnomer"));
+        tabelnomer->setGeometry(QRect(20, 420, 249, 44));
+        tabelnomer->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        mobileInfo = new QLabel(centralwidget);
+        mobileInfo->setObjectName(QString::fromUtf8("mobileInfo"));
+        mobileInfo->setGeometry(QRect(361, 315, 219, 31));
+        mobileInfo->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        departmentInfo = new QLabel(centralwidget);
+        departmentInfo->setObjectName(QString::fromUtf8("departmentInfo"));
+        departmentInfo->setGeometry(QRect(361, 94, 63, 31));
+        departmentInfo->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        carInfo = new QLabel(centralwidget);
+        carInfo->setObjectName(QString::fromUtf8("carInfo"));
+        carInfo->setGeometry(QRect(361, 204, 112, 31));
+        carInfo->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        dolzhnostInfo = new QLabel(centralwidget);
+        dolzhnostInfo->setObjectName(QString::fromUtf8("dolzhnostInfo"));
+        dolzhnostInfo->setGeometry(QRect(361, 149, 116, 31));
+        dolzhnostInfo->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        emailImfo = new QLabel(centralwidget);
+        emailImfo->setObjectName(QString::fromUtf8("emailImfo"));
+        emailImfo->setGeometry(QRect(361, 260, 70, 31));
+        emailImfo->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        dolzhnost = new QLabel(centralwidget);
+        dolzhnost->setObjectName(QString::fromUtf8("dolzhnost"));
+        dolzhnost->setGeometry(QRect(621, 149, 511, 31));
+        dolzhnost->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        car = new QLabel(centralwidget);
+        car->setObjectName(QString::fromUtf8("car"));
+        car->setGeometry(QRect(621, 204, 511, 31));
+        car->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        email = new QLabel(centralwidget);
+        email->setObjectName(QString::fromUtf8("email"));
+        email->setGeometry(QRect(621, 260, 501, 31));
+        email->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        department = new QLabel(centralwidget);
+        department->setObjectName(QString::fromUtf8("department"));
+        department->setGeometry(QRect(621, 94, 511, 31));
+        department->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        mobile = new QLabel(centralwidget);
+        mobile->setObjectName(QString::fromUtf8("mobile"));
+        mobile->setGeometry(QRect(621, 315, 511, 31));
+        mobile->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
         MainApp->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainApp);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -98,11 +212,13 @@ public:
         MainApp->addToolBar(Qt::TopToolBarArea, toolBar_3);
         toolBar = new QToolBar(MainApp);
         toolBar->setObjectName(QString::fromUtf8("toolBar"));
+        toolBar->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         MainApp->addToolBar(Qt::TopToolBarArea, toolBar);
 
         toolBar->addAction(actionProducts);
         toolBar->addAction(actionMessages);
         toolBar->addAction(actionPersonnel);
+        toolBar->addAction(actionAccount);
         toolBar->addSeparator();
 
         retranslateUi(MainApp);
@@ -112,7 +228,7 @@ public:
 
     void retranslateUi(QMainWindow *MainApp)
     {
-        MainApp->setWindowTitle(QCoreApplication::translate("MainApp", "MainWindow", nullptr));
+        MainApp->setWindowTitle(QCoreApplication::translate("MainApp", "DBSP Project Commander", nullptr));
         actionProducts->setText(QCoreApplication::translate("MainApp", "Products", nullptr));
 #if QT_CONFIG(tooltip)
         actionProducts->setToolTip(QCoreApplication::translate("MainApp", "Products", nullptr));
@@ -125,6 +241,7 @@ public:
 #if QT_CONFIG(tooltip)
         actionPersonnel->setToolTip(QCoreApplication::translate("MainApp", "Personnel", nullptr));
 #endif // QT_CONFIG(tooltip)
+        actionAccount->setText(QCoreApplication::translate("MainApp", "Account", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("MainApp", "FIO", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
@@ -139,7 +256,25 @@ public:
         ___qtablewidgetitem5->setText(QCoreApplication::translate("MainApp", "New Column", nullptr));
         QTableWidgetItem *___qtablewidgetitem6 = tableWidget->horizontalHeaderItem(6);
         ___qtablewidgetitem6->setText(QCoreApplication::translate("MainApp", "New Column", nullptr));
+        photo->setText(QString());
+        welcome->setText(QCoreApplication::translate("MainApp", "\320\233\320\270\321\207\320\275\321\213\320\271 \320\272\320\260\320\261\320\270\320\275\320\265\321\202", nullptr));
+        fio->setText(QCoreApplication::translate("MainApp", "fio", nullptr));
         label->setText(QString());
+        time->setText(QCoreApplication::translate("MainApp", "time", nullptr));
+        date->setText(QCoreApplication::translate("MainApp", "Date", nullptr));
+        time_to_home->setText(QCoreApplication::translate("MainApp", "time_to_home", nullptr));
+        date_2->setText(QCoreApplication::translate("MainApp", "\320\236\321\201\321\202\320\260\320\273\320\276\321\201\321\214:", nullptr));
+        tabelnomer->setText(QCoreApplication::translate("MainApp", "tabelNomer", nullptr));
+        mobileInfo->setText(QCoreApplication::translate("MainApp", "\320\234\320\276\320\261\320\270\320\273\321\214\320\275\321\213\320\271 \321\202\320\265\320\273\320\265\321\204\320\276\320\275", nullptr));
+        departmentInfo->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273", nullptr));
+        carInfo->setText(QCoreApplication::translate("MainApp", "\320\242\321\200\320\260\320\275\321\201\320\277\320\276\321\200\321\202", nullptr));
+        dolzhnostInfo->setText(QCoreApplication::translate("MainApp", "\320\224\320\276\320\273\320\266\320\275\320\276\321\201\321\202\321\214", nullptr));
+        emailImfo->setText(QCoreApplication::translate("MainApp", "\320\230\320\274\320\265\320\271\320\273", nullptr));
+        dolzhnost->setText(QCoreApplication::translate("MainApp", "label_11", nullptr));
+        car->setText(QCoreApplication::translate("MainApp", "label_15", nullptr));
+        email->setText(QCoreApplication::translate("MainApp", "label_9", nullptr));
+        department->setText(QCoreApplication::translate("MainApp", "label_12", nullptr));
+        mobile->setText(QCoreApplication::translate("MainApp", "label_7", nullptr));
         toolBar_2->setWindowTitle(QCoreApplication::translate("MainApp", "toolBar_2", nullptr));
         toolBar_3->setWindowTitle(QCoreApplication::translate("MainApp", "toolBar_3", nullptr));
         toolBar->setWindowTitle(QCoreApplication::translate("MainApp", "toolBar", nullptr));

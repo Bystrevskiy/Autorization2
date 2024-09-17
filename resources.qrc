@@ -18,5 +18,6 @@
         <file>img/icons8-список-50.png</file>
         <file>img/icons8-убранная-полка-50.png</file>
         <file>img/user.png</file>
+        <file>img/personal_account.png</file>
     </qresource>
 </RCC>
