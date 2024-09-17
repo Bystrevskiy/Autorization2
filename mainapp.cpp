@@ -222,7 +222,7 @@ void MainApp::on_actionAccount_triggered()
     ui->tableWidget->hide();
 }
 
-void MainApp::slotAccount(QPixmap &a, QString &name, QString &mobilephone, QString &mail, QString &department, QString &car, QString &tablenomer, QString &doljnost, QString &lasttime, QString &lastdate)
+void MainApp::slotAccount(QPixmap &a, QString &name, QString &mobilephone, QString &department, QString &mail, QString &car, QString &tablenomer, QString &doljnost, QString &lasttime, QString &lastdate)
 {
     ui->department->setText(department);
     if (car==""){
