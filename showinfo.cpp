@@ -38,13 +38,13 @@ void ShowInfo::slotname(QString name, QString mobilephone, QString mail, QString
     ui->label_15->setText(car);
     ui->label_6->setText(tablenomer);
     ui->label_11->setText(doljnost);
-    ui->label_16->setText(lasttime);
-    ui->label_18->setText(lastdate);
     QTime currentTime = QTime::currentTime();
-    QDate currentDate = QDate::currentDate();
+    QDate currentDate = QDate::currentDate().fromString("yyyy.MM.dd");
     // Преобразование строки lasttime в объект QTime с форматом hh:mm:ss
     QTime lastTime = QTime::fromString(lasttime, "hh:mm:ss");
     QDate lastDate = QDate::fromString(lastdate, "yyyy.MM.dd");
+    ui->label_16->setText(lasttime);
+    ui->label_18->setText(lastdate.fromStdString("yyyy.MM.dd"));
     // Вычисление разницы между текущим временем и lasttime в секундах
     if (currentDate == lastDate) {
         // Вычисление разницы между текущим временем и lasttime в секундах
@@ -64,8 +64,6 @@ void ShowInfo::slotname(QString name, QString mobilephone, QString mail, QString
         // Отображение workDuration в label_19
         ui->label_19->setText(workDuration);
     }
-    // Установка текущего времени в timeEdit
-    ui->timeEdit->setTime(currentTime);
 }
 void ShowInfo::closeEvent(QCloseEvent *event)
 {

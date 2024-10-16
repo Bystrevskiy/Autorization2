@@ -1,10 +1,10 @@
 release/main.o
 release/mainapp.o
 release/mainwindow.o
-release/panel.o
+release/server.o
 release/showinfo.o
 release/qrc_resources.o
 release/moc_mainapp.o
 release/moc_mainwindow.o
-release/moc_panel.o
+release/moc_server.o
 release/moc_showinfo.o

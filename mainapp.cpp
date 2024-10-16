@@ -9,22 +9,38 @@
 #include <QVector>
 #include <QTime>
 #include <QDate>
+#include <server.h>
+#include <QMainWindow>
+#include <QTcpSocket>
 MainApp::MainApp(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainApp)
     , showinfo(nullptr)
 {
+    socket = new QTcpSocket(this);
+    if (socket->state() == QAbstractSocket::ConnectedState) {
+        qDebug() << "Socket is connected!";
+    } else {
+        qDebug() << "Socket is not connected!";
+    }
+
+    connect(socket, &QTcpSocket::readyRead, this, &MainApp::slotReadyRead);
+    connect(socket, &QTcpSocket::disconnected, this, &MainApp::deleteLater);
+    connect(socket, &QTcpSocket::errorOccurred, this, [](QAbstractSocket::SocketError socketError) {
+        qDebug() << "Socket error:" << socketError;
+    });
+
     ui->setupUi(this);
     ui->tableWidget->setEditTriggers(QTableWidget::NoEditTriggers);
     QSqlDatabase db = QSqlDatabase::addDatabase("QIBASE");
-    db.setHostName("172.18.110.56");
-    db.setDatabaseName("C:/ACS/Base/ACS.FDB");
-    db.setUserName("ADM");
-    db.setPassword("700");
-    db.setPort(3050);
-    // db.setDatabaseName("C:/ibexpert/ACS.FDB");
-    // db.setUserName("SYSDBA");
-    // db.setPassword("masterkey");
+    // db.setHostName("172.18.110.56");
+    // db.setDatabaseName("C:/ACS/Base/ACS.FDB");
+    // db.setUserName("ADM");
+    // db.setPassword("700");
+    // db.setPort(3050);
+    db.setDatabaseName("C:/ibexpert/ACS.FDB");
+    db.setUserName("SYSDBA");
+    db.setPassword("masterkey");
     hideUnused();
 
     if (!db.open()) {
@@ -79,14 +95,14 @@ void MainApp::on_tableWidget_cellDoubleClicked(int row, int /*column*/)
     }
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QIBASE");
-    db.setHostName("172.18.110.56");
-    db.setDatabaseName("C:/ACS/Base/ACS.FDB");
-    db.setUserName("ADM");
-    db.setPassword("700");
-    db.setPort(3050);
-    // db.setDatabaseName("C:/ibexpert/ACS.FDB");
-    // db.setUserName("SYSDBA");
-    // db.setPassword("masterkey");
+    // db.setHostName("172.18.110.56");
+    // db.setDatabaseName("C:/ACS/Base/ACS.FDB");
+    // db.setUserName("ADM");
+    // db.setPassword("700");
+    // db.setPort(3050);
+    db.setDatabaseName("C:/ibexpert/ACS.FDB");
+    db.setUserName("SYSDBA");
+    db.setPassword("masterkey");
 
     if (!db.open()) {
         QMessageBox::critical(this, "Ошибка соединения", "Не удалось подключиться к базе данных.");
@@ -155,7 +171,33 @@ void MainApp::on_tableWidget_cellDoubleClicked(int row, int /*column*/)
 void MainApp::on_actionProducts_triggered()
 {
     hideUnused();
-    ui-> label->setText("Работает");
+    ui->label->setText("Работает");
+}
+
+void MainApp::setColorTheme(QString styleSheet)
+{
+    ui->department->setStyleSheet(styleSheet);
+    ui->car->setStyleSheet(styleSheet);
+    ui->email->setStyleSheet(styleSheet);
+    ui->dolzhnost->setStyleSheet(styleSheet);
+    ui->fio->setStyleSheet(styleSheet);
+    ui->photo->setStyleSheet(styleSheet);
+    ui->mobile->setStyleSheet(styleSheet);
+    ui->departmentInfo->setStyleSheet(styleSheet);
+    ui->carInfo->setStyleSheet(styleSheet);
+    ui->dolzhnostInfo->setStyleSheet(styleSheet);
+    ui->welcome->setStyleSheet(styleSheet);
+    ui->emailImfo->setStyleSheet(styleSheet);
+    ui->date->setStyleSheet(styleSheet);
+    ui->time->setStyleSheet(styleSheet);
+    ui->mobileInfo->setStyleSheet(styleSheet);
+    ui->time_to_home->setStyleSheet(styleSheet);
+    ui->date_2->setStyleSheet(styleSheet);
+    ui->tabelnomer->setStyleSheet(styleSheet);
+    ui->pushButton->setStyleSheet(styleSheet);
+    ui->pushButton_2->setStyleSheet(styleSheet);
+    ui->pushButton_3->setStyleSheet(styleSheet);
+    ui->label_2->setStyleSheet(styleSheet);
 }
 
 
@@ -169,29 +211,6 @@ void MainApp::on_actionMessages_triggered()
 void MainApp::on_actionPersonnel_triggered()
 {
     hideUnused();
-    // ui->departmentInfo->hide();
-    // ui->carInfo->hide();
-    // ui->dolzhnostInfo->hide();
-    // ui->welcome->hide();
-    // ui->emailImfo->hide();
-    // ui->date->hide();
-    // ui->time->hide();
-    // ui->mobileInfo->hide();
-    // ui->time_to_home->hide();
-    // ui->date->hide();
-    // ui->date_2->hide();
-    // ui->tabelnomer->hide();
-
-
-    // ui->department->hide();
-    // ui->car->hide();
-    // ui->email->hide();
-    // ui->dolzhnost->hide();
-    // ui->fio->hide();
-    // ui->photo->hide();
-    // ui->mobile->hide();
-    // ui->label->setText("");
-
     ui->tableWidget->show();
 }
 
@@ -220,6 +239,10 @@ void MainApp::on_actionAccount_triggered()
     ui->date_2->show();
     ui->tabelnomer->show();
     ui->tableWidget->hide();
+    ui->label_2->show();
+    ui->pushButton->show();
+    ui->pushButton_2->show();
+    ui->pushButton_3->show();
 }
 
 void MainApp::slotAccount(QPixmap &a, QString &name, QString &mobilephone, QString &department, QString &mail, QString &car, QString &tablenomer, QString &doljnost, QString &lasttime, QString &lastdate)
@@ -276,7 +299,7 @@ void MainApp::hideUnused(){
     ui->date->hide();
     ui->date_2->hide();
     ui->tabelnomer->hide();
-
+    ui->label_2->hide();
 
     ui->department->hide();
     ui->car->hide();
@@ -286,5 +309,102 @@ void MainApp::hideUnused(){
     ui->photo->hide();
     ui->mobile->hide();
     ui->label->hide();
+    ui->pushButton->hide();
+    ui->pushButton_2->hide();
+    ui->pushButton_3->hide();
 }
+
+
+void MainApp::on_connect_clicked() {
+    qDebug() << "Trying to connect...";
+    if (socket->state() == QAbstractSocket::UnconnectedState) {
+        socket->connectToHost("192.168.56.1", 3702);
+        qDebug() << "Connecting...";
+    } else {
+        qDebug() << "Socket is already connected or connecting.";
+    }
+}
+
+
+void MainApp::SendToServer(QString str)
+{
+    Data.clear();
+    QDataStream out(&Data, QIODevice::WriteOnly);
+    out.setVersion(QDataStream::Qt_5_15);
+    out<<str;
+    socket->write(Data);
+    qDebug() << "Sending: " << str;
+}
+void MainApp::slotReadyRead()
+{
+    QDataStream in(socket);
+    in.setVersion(QDataStream::Qt_5_15);
+    if(in.status()==QDataStream::Ok)
+    {
+        QString str;
+        in >> str;
+        qDebug() << "Received on server: " << str;
+        ui->textBrowser->append(str);
+    }
+    else{
+        ui->textBrowser->append("read error");
+    }
+
+}
+
+
+void MainApp::on_sendMessage_clicked()
+{
+    SendToServer(ui->outMessage->text());
+    ui->outMessage->clear();
+}
+
+
+void MainApp::on_outMessage_returnPressed()
+{
+    SendToServer(ui->outMessage->text());
+    ui->outMessage->clear();
+}
+
+
+void MainApp::applyStyleSheet(const QString &styleSheet) {
+    // Применяем стиль ко всем компонентам через главное окно
+    this->setStyleSheet(styleSheet);
+    emit colorSchemeChanged(styleSheet);
+    qDebug() << "Emit colorSchemeChanged with: " << styleSheet;
+}
+
+void MainApp::on_pushButton_clicked()
+{
+    QString styleSheet = "font: 14pt Segoe UI; color: rgb(255,255,255)";
+    setColorTheme(styleSheet);
+    QString s = "background-color: rgb(13, 76, 128);";
+    applyStyleSheet(s);
+    emit colorSchemeChanged(s);
+}
+
+void MainApp::on_pushButton_2_clicked()
+{
+    QString styleSheet = "font: 14pt Segoe UI; color: rgb(32, 107, 88);";
+    setColorTheme(styleSheet);
+    QString s = "QWidget { background-color: rgb(254, 190, 152); }";
+    applyStyleSheet(s);
+    emit colorSchemeChanged(s);
+}
+
+void MainApp::on_pushButton_3_clicked()
+{
+    QString styleSheet = "font: 14pt Segoe UI; color: rgb(255,255,255)";
+    setColorTheme(styleSheet);
+    QString s = "background-color: rgb(187, 39, 73);";
+    applyStyleSheet(s);
+    emit colorSchemeChanged(s);
+}
+
+
+
+
+
+
+
 

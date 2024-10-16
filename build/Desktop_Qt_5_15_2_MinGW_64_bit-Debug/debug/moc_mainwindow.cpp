@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[16];
-    char stringdata0[143];
+    QByteArrayData data[18];
+    char stringdata0[171];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -47,13 +47,16 @@ QT_MOC_LITERAL(11, 83, 10), // "tablenomer"
 QT_MOC_LITERAL(12, 94, 8), // "doljnost"
 QT_MOC_LITERAL(13, 103, 8), // "lasttime"
 QT_MOC_LITERAL(14, 112, 8), // "lastdate"
-QT_MOC_LITERAL(15, 121, 21) // "on_pushButton_clicked"
+QT_MOC_LITERAL(15, 121, 21), // "on_pushButton_clicked"
+QT_MOC_LITERAL(16, 143, 16), // "applyColorScheme"
+QT_MOC_LITERAL(17, 160, 10) // "styleSheet"
 
     },
     "MainWindow\0signalAccount\0\0QPixmap&\0a\0"
     "QString&\0name\0mobilephone\0mail\0"
     "department\0car\0tablenomer\0doljnost\0"
-    "lasttime\0lastdate\0on_pushButton_clicked"
+    "lasttime\0lastdate\0on_pushButton_clicked\0"
+    "applyColorScheme\0styleSheet"
 };
 #undef QT_MOC_LITERAL
 
@@ -63,7 +66,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -71,16 +74,18 @@ static const uint qt_meta_data_MainWindow[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,   10,   24,    2, 0x06 /* Public */,
+       1,   10,   29,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      15,    0,   45,    2, 0x08 /* Private */,
+      15,    0,   50,    2, 0x08 /* Private */,
+      16,    1,   51,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3, 0x80000000 | 5, 0x80000000 | 5, 0x80000000 | 5, 0x80000000 | 5, 0x80000000 | 5, 0x80000000 | 5, 0x80000000 | 5, 0x80000000 | 5, 0x80000000 | 5,    4,    6,    7,    8,    9,   10,   11,   12,   13,   14,
 
  // slots: parameters
     QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,   17,
 
        0        // eod
 };
@@ -93,6 +98,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->signalAccount((*reinterpret_cast< QPixmap(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])),(*reinterpret_cast< QString(*)>(_a[5])),(*reinterpret_cast< QString(*)>(_a[6])),(*reinterpret_cast< QString(*)>(_a[7])),(*reinterpret_cast< QString(*)>(_a[8])),(*reinterpret_cast< QString(*)>(_a[9])),(*reinterpret_cast< QString(*)>(_a[10]))); break;
         case 1: _t->on_pushButton_clicked(); break;
+        case 2: _t->applyColorScheme((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -136,13 +142,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 3)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }

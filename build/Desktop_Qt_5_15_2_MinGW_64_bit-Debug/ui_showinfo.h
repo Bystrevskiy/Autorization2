@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QTimeEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -40,9 +39,9 @@ public:
     QLabel *label_16;
     QLabel *label_17;
     QLabel *label_18;
-    QTimeEdit *timeEdit;
     QLabel *label_19;
     QLabel *label;
+    QLabel *label_20;
 
     void setupUi(QWidget *ShowInfo)
     {
@@ -158,21 +157,20 @@ public:
         label_18->setGeometry(QRect(540, 370, 161, 44));
         label_18->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
 "color: rgb(255, 255, 255);"));
-        timeEdit = new QTimeEdit(ShowInfo);
-        timeEdit->setObjectName(QString::fromUtf8("timeEdit"));
-        timeEdit->setGeometry(QRect(720, 420, 118, 29));
-        timeEdit->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255);\n"
-""));
         label_19 = new QLabel(ShowInfo);
         label_19->setObjectName(QString::fromUtf8("label_19"));
-        label_19->setGeometry(QRect(970, 370, 171, 44));
+        label_19->setGeometry(QRect(720, 410, 171, 44));
         label_19->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
 "color: rgb(255, 255, 255);"));
         label = new QLabel(ShowInfo);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(360, 10, 721, 44));
         label->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        label_20 = new QLabel(ShowInfo);
+        label_20->setObjectName(QString::fromUtf8("label_20"));
+        label_20->setGeometry(QRect(360, 410, 261, 44));
+        label_20->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
 "color: rgb(255, 255, 255);"));
 
         retranslateUi(ShowInfo);
@@ -200,6 +198,7 @@ public:
         label_18->setText(QCoreApplication::translate("ShowInfo", "label_18", nullptr));
         label_19->setText(QCoreApplication::translate("ShowInfo", "label_19", nullptr));
         label->setText(QString());
+        label_20->setText(QCoreApplication::translate("ShowInfo", "\320\236\321\202\321\200\320\260\320\261\320\276\321\202\320\260\320\275\320\260 \321\201\320\265\320\263\320\276\320\264\320\275\321\217:", nullptr));
     } // retranslateUi
 
 };

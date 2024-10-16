@@ -1,10 +1,10 @@
 debug/main.o
 debug/mainapp.o
 debug/mainwindow.o
-debug/panel.o
+debug/server.o
 debug/showinfo.o
 debug/qrc_resources.o
 debug/moc_mainapp.o
 debug/moc_mainwindow.o
-debug/moc_panel.o
+debug/moc_server.o
 debug/moc_showinfo.o
