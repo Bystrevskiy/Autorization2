@@ -6,28 +6,30 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1920</width>
-    <height>1080</height>
+    <width>1200</width>
+    <height>740</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>DBSP Project Commander</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(4, 83, 125);</string>
+   <string notr="true">background-color: rgb(13, 76, 128);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>250</x>
       <y>0</y>
-      <width>1920</width>
-      <height>1000</height>
+      <width>950</width>
+      <height>651</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+font: 11pt &quot;Segoe UI&quot;;</string>
     </property>
     <attribute name="horizontalHeaderStretchLastSection">
      <bool>true</bool>
@@ -538,29 +540,284 @@ font: 14pt &quot;Segoe UI&quot;;</string>
      <string>Попробуйте новый стиль</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QToolBar" name="toolBar_2">
-   <property name="windowTitle">
-    <string>toolBar_2</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>BottomToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
-  <widget class="QToolBar" name="toolBar_3">
-   <property name="windowTitle">
-    <string>toolBar_3</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>370</y>
+      <width>261</width>
+      <height>281</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>242</width>
+       <height>879</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="depAll">
+        <property name="text">
+         <string>Все отделы</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d01">
+        <property name="text">
+         <string>Отдел 01</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d09">
+        <property name="text">
+         <string>Отдел 09</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d13">
+        <property name="text">
+         <string>Отдел 13</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d14">
+        <property name="text">
+         <string>Отдел 14</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d20">
+        <property name="text">
+         <string>Отдел 20</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d21">
+        <property name="text">
+         <string>Отдел 21</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d22">
+        <property name="text">
+         <string>Отдел 22</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d23">
+        <property name="text">
+         <string>Отдел 23</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d24">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Отдел 24</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d25">
+        <property name="text">
+         <string>Отдел 25</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d29">
+        <property name="text">
+         <string>Отдел 29</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d31">
+        <property name="text">
+         <string>Отдел 31</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d34">
+        <property name="text">
+         <string>Отдел 34</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d63">
+        <property name="text">
+         <string>Отдел 63</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d65">
+        <property name="text">
+         <string>Отдел 65</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d73">
+        <property name="text">
+         <string>Отдел 73</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d75">
+        <property name="text">
+         <string>Отдел 75</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d81">
+        <property name="text">
+         <string>Отдел 81</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d82">
+        <property name="text">
+         <string>Отдел 82</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d89">
+        <property name="text">
+         <string>Отдел 89</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d91">
+        <property name="text">
+         <string>Отдел 91</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d92">
+        <property name="text">
+         <string>Отдел 92</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="d95">
+        <property name="text">
+         <string>Отдел 95</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>1000</y>
+      <width>83</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>330</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>330</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Отдел:</string>
+    </property>
+   </widget>
+   <zorder>date</zorder>
+   <zorder>welcome</zorder>
+   <zorder>pushButton_3</zorder>
+   <zorder>time</zorder>
+   <zorder>dolzhnost</zorder>
+   <zorder>mobileInfo</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label</zorder>
+   <zorder>emailImfo</zorder>
+   <zorder>mobile</zorder>
+   <zorder>date_2</zorder>
+   <zorder>pushButton_2</zorder>
+   <zorder>tabelnomer</zorder>
+   <zorder>car</zorder>
+   <zorder>dolzhnostInfo</zorder>
+   <zorder>photo</zorder>
+   <zorder>departmentInfo</zorder>
+   <zorder>time_to_home</zorder>
+   <zorder>carInfo</zorder>
+   <zorder>email</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>department</zorder>
+   <zorder>fio</zorder>
+   <zorder>tableWidget</zorder>
+   <zorder>sendMessage</zorder>
+   <zorder>textBrowser</zorder>
+   <zorder>connect</zorder>
+   <zorder>outMessage</zorder>
+   <zorder>scrollArea</zorder>
+   <zorder>pushButton_5</zorder>
+   <zorder>lineEdit</zorder>
+   <zorder>label_3</zorder>
   </widget>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">

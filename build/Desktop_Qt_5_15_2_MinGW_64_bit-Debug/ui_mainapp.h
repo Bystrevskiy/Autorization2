@@ -18,10 +18,11 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
+#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QToolBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -62,17 +63,44 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QLabel *label_2;
-    QStatusBar *statusbar;
-    QToolBar *toolBar_2;
-    QToolBar *toolBar_3;
+    QScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents;
+    QVBoxLayout *verticalLayout;
+    QPushButton *depAll;
+    QPushButton *d01;
+    QPushButton *d09;
+    QPushButton *d13;
+    QPushButton *d14;
+    QPushButton *d20;
+    QPushButton *d21;
+    QPushButton *d22;
+    QPushButton *d23;
+    QPushButton *d24;
+    QPushButton *d25;
+    QPushButton *d29;
+    QPushButton *d31;
+    QPushButton *d34;
+    QPushButton *d63;
+    QPushButton *d65;
+    QPushButton *d73;
+    QPushButton *d75;
+    QPushButton *d81;
+    QPushButton *d82;
+    QPushButton *d89;
+    QPushButton *d91;
+    QPushButton *d92;
+    QPushButton *d95;
+    QPushButton *pushButton_5;
+    QLineEdit *lineEdit;
+    QLabel *label_3;
     QToolBar *toolBar;
 
     void setupUi(QMainWindow *MainApp)
     {
         if (MainApp->objectName().isEmpty())
             MainApp->setObjectName(QString::fromUtf8("MainApp"));
-        MainApp->resize(1920, 1080);
-        MainApp->setStyleSheet(QString::fromUtf8("background-color: rgb(4, 83, 125);"));
+        MainApp->resize(1200, 740);
+        MainApp->setStyleSheet(QString::fromUtf8("background-color: rgb(13, 76, 128);"));
         actionProducts = new QAction(MainApp);
         actionProducts->setObjectName(QString::fromUtf8("actionProducts"));
         QIcon icon;
@@ -117,8 +145,10 @@ public:
         QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(6, __qtablewidgetitem6);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
-        tableWidget->setGeometry(QRect(0, 0, 1920, 1000));
-        tableWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        tableWidget->setGeometry(QRect(250, 0, 950, 651));
+        tableWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
+"color: rgb(0, 0, 0);\n"
+"font: 11pt \"Segoe UI\";"));
         tableWidget->horizontalHeader()->setStretchLastSection(true);
         photo = new QLabel(centralwidget);
         photo->setObjectName(QString::fromUtf8("photo"));
@@ -259,16 +289,185 @@ public:
         label_2->setGeometry(QRect(20, 500, 271, 41));
         label_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
 "font: 14pt \"Segoe UI\";"));
+        scrollArea = new QScrollArea(centralwidget);
+        scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
+        scrollArea->setGeometry(QRect(-10, 370, 261, 281));
+        scrollArea->setAutoFillBackground(true);
+        scrollArea->setStyleSheet(QString::fromUtf8(""));
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 242, 879));
+        verticalLayout = new QVBoxLayout(scrollAreaWidgetContents);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        depAll = new QPushButton(scrollAreaWidgetContents);
+        depAll->setObjectName(QString::fromUtf8("depAll"));
+
+        verticalLayout->addWidget(depAll);
+
+        d01 = new QPushButton(scrollAreaWidgetContents);
+        d01->setObjectName(QString::fromUtf8("d01"));
+
+        verticalLayout->addWidget(d01);
+
+        d09 = new QPushButton(scrollAreaWidgetContents);
+        d09->setObjectName(QString::fromUtf8("d09"));
+
+        verticalLayout->addWidget(d09);
+
+        d13 = new QPushButton(scrollAreaWidgetContents);
+        d13->setObjectName(QString::fromUtf8("d13"));
+
+        verticalLayout->addWidget(d13);
+
+        d14 = new QPushButton(scrollAreaWidgetContents);
+        d14->setObjectName(QString::fromUtf8("d14"));
+
+        verticalLayout->addWidget(d14);
+
+        d20 = new QPushButton(scrollAreaWidgetContents);
+        d20->setObjectName(QString::fromUtf8("d20"));
+
+        verticalLayout->addWidget(d20);
+
+        d21 = new QPushButton(scrollAreaWidgetContents);
+        d21->setObjectName(QString::fromUtf8("d21"));
+
+        verticalLayout->addWidget(d21);
+
+        d22 = new QPushButton(scrollAreaWidgetContents);
+        d22->setObjectName(QString::fromUtf8("d22"));
+
+        verticalLayout->addWidget(d22);
+
+        d23 = new QPushButton(scrollAreaWidgetContents);
+        d23->setObjectName(QString::fromUtf8("d23"));
+
+        verticalLayout->addWidget(d23);
+
+        d24 = new QPushButton(scrollAreaWidgetContents);
+        d24->setObjectName(QString::fromUtf8("d24"));
+        d24->setStyleSheet(QString::fromUtf8(""));
+
+        verticalLayout->addWidget(d24);
+
+        d25 = new QPushButton(scrollAreaWidgetContents);
+        d25->setObjectName(QString::fromUtf8("d25"));
+
+        verticalLayout->addWidget(d25);
+
+        d29 = new QPushButton(scrollAreaWidgetContents);
+        d29->setObjectName(QString::fromUtf8("d29"));
+
+        verticalLayout->addWidget(d29);
+
+        d31 = new QPushButton(scrollAreaWidgetContents);
+        d31->setObjectName(QString::fromUtf8("d31"));
+
+        verticalLayout->addWidget(d31);
+
+        d34 = new QPushButton(scrollAreaWidgetContents);
+        d34->setObjectName(QString::fromUtf8("d34"));
+
+        verticalLayout->addWidget(d34);
+
+        d63 = new QPushButton(scrollAreaWidgetContents);
+        d63->setObjectName(QString::fromUtf8("d63"));
+
+        verticalLayout->addWidget(d63);
+
+        d65 = new QPushButton(scrollAreaWidgetContents);
+        d65->setObjectName(QString::fromUtf8("d65"));
+
+        verticalLayout->addWidget(d65);
+
+        d73 = new QPushButton(scrollAreaWidgetContents);
+        d73->setObjectName(QString::fromUtf8("d73"));
+
+        verticalLayout->addWidget(d73);
+
+        d75 = new QPushButton(scrollAreaWidgetContents);
+        d75->setObjectName(QString::fromUtf8("d75"));
+
+        verticalLayout->addWidget(d75);
+
+        d81 = new QPushButton(scrollAreaWidgetContents);
+        d81->setObjectName(QString::fromUtf8("d81"));
+
+        verticalLayout->addWidget(d81);
+
+        d82 = new QPushButton(scrollAreaWidgetContents);
+        d82->setObjectName(QString::fromUtf8("d82"));
+
+        verticalLayout->addWidget(d82);
+
+        d89 = new QPushButton(scrollAreaWidgetContents);
+        d89->setObjectName(QString::fromUtf8("d89"));
+
+        verticalLayout->addWidget(d89);
+
+        d91 = new QPushButton(scrollAreaWidgetContents);
+        d91->setObjectName(QString::fromUtf8("d91"));
+
+        verticalLayout->addWidget(d91);
+
+        d92 = new QPushButton(scrollAreaWidgetContents);
+        d92->setObjectName(QString::fromUtf8("d92"));
+
+        verticalLayout->addWidget(d92);
+
+        d95 = new QPushButton(scrollAreaWidgetContents);
+        d95->setObjectName(QString::fromUtf8("d95"));
+
+        verticalLayout->addWidget(d95);
+
+        scrollArea->setWidget(scrollAreaWidgetContents);
+        pushButton_5 = new QPushButton(centralwidget);
+        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
+        pushButton_5->setGeometry(QRect(70, 1000, 83, 29));
+        lineEdit = new QLineEdit(centralwidget);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setGeometry(QRect(130, 330, 111, 41));
+        lineEdit->setStyleSheet(QString::fromUtf8("font: 12pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setGeometry(QRect(10, 330, 111, 31));
+        label_3->setStyleSheet(QString::fromUtf8("font: 12pt \"Segoe UI\";\n"
+"color: rgb(255, 255, 255);"));
         MainApp->setCentralWidget(centralwidget);
-        statusbar = new QStatusBar(MainApp);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        MainApp->setStatusBar(statusbar);
-        toolBar_2 = new QToolBar(MainApp);
-        toolBar_2->setObjectName(QString::fromUtf8("toolBar_2"));
-        MainApp->addToolBar(Qt::BottomToolBarArea, toolBar_2);
-        toolBar_3 = new QToolBar(MainApp);
-        toolBar_3->setObjectName(QString::fromUtf8("toolBar_3"));
-        MainApp->addToolBar(Qt::TopToolBarArea, toolBar_3);
+        date->raise();
+        welcome->raise();
+        pushButton_3->raise();
+        time->raise();
+        dolzhnost->raise();
+        mobileInfo->raise();
+        label_2->raise();
+        label->raise();
+        emailImfo->raise();
+        mobile->raise();
+        date_2->raise();
+        pushButton_2->raise();
+        tabelnomer->raise();
+        car->raise();
+        dolzhnostInfo->raise();
+        photo->raise();
+        departmentInfo->raise();
+        time_to_home->raise();
+        carInfo->raise();
+        email->raise();
+        pushButton->raise();
+        department->raise();
+        fio->raise();
+        tableWidget->raise();
+        sendMessage->raise();
+        textBrowser->raise();
+        connect->raise();
+        outMessage->raise();
+        scrollArea->raise();
+        pushButton_5->raise();
+        lineEdit->raise();
+        label_3->raise();
         toolBar = new QToolBar(MainApp);
         toolBar->setObjectName(QString::fromUtf8("toolBar"));
         toolBar->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
@@ -339,8 +538,32 @@ public:
         pushButton_2->setText(QString());
         pushButton_3->setText(QString());
         label_2->setText(QCoreApplication::translate("MainApp", "\320\237\320\276\320\277\321\200\320\276\320\261\321\203\320\271\321\202\320\265 \320\275\320\276\320\262\321\213\320\271 \321\201\321\202\320\270\320\273\321\214", nullptr));
-        toolBar_2->setWindowTitle(QCoreApplication::translate("MainApp", "toolBar_2", nullptr));
-        toolBar_3->setWindowTitle(QCoreApplication::translate("MainApp", "toolBar_3", nullptr));
+        depAll->setText(QCoreApplication::translate("MainApp", "\320\222\321\201\320\265 \320\276\321\202\320\264\320\265\320\273\321\213", nullptr));
+        d01->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 01", nullptr));
+        d09->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 09", nullptr));
+        d13->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 13", nullptr));
+        d14->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 14", nullptr));
+        d20->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 20", nullptr));
+        d21->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 21", nullptr));
+        d22->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 22", nullptr));
+        d23->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 23", nullptr));
+        d24->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 24", nullptr));
+        d25->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 25", nullptr));
+        d29->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 29", nullptr));
+        d31->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 31", nullptr));
+        d34->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 34", nullptr));
+        d63->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 63", nullptr));
+        d65->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 65", nullptr));
+        d73->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 73", nullptr));
+        d75->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 75", nullptr));
+        d81->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 81", nullptr));
+        d82->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 82", nullptr));
+        d89->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 89", nullptr));
+        d91->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 91", nullptr));
+        d92->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 92", nullptr));
+        d95->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273 95", nullptr));
+        pushButton_5->setText(QCoreApplication::translate("MainApp", "PushButton", nullptr));
+        label_3->setText(QCoreApplication::translate("MainApp", "\320\236\321\202\320\264\320\265\320\273:", nullptr));
         toolBar->setWindowTitle(QCoreApplication::translate("MainApp", "toolBar", nullptr));
     } // retranslateUi
 

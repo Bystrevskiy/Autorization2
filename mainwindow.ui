@@ -24,29 +24,14 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton {
-    /* Основной стиль кнопки */
-    appearance: none;
-    border: 0;
-	border-radius: 27px;
-	
-	/*background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0610329 rgba(4,83,125, 255), stop:0.629108 rgba(14,120,125, 255));*/
-	background-color: rgb(4, 83, 125);
-    color: #fff;
+     <string notr="true">background-color: rgb(4, 83, 125);
+border-radius: 27px;
+appearance: none;
+border: 0;
+color: #fff;
     padding: 8px 16px;
     font-size: 16px;
-    box-shadow: 0 0 0 4px #cbd6ee;
-}
-
-QPushButton:pressed {
-    /* Стиль кнопки при нажатии */
-     /* Например, изменяем цвет фона */
-	/*background-color: rgb(121,119,143);*/
-	
-	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.653, y2:0.596591, stop:0 rgba(4, 83, 125, 255), stop:0.99061 rgba(121, 119, 143, 255));
-	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(4, 83, 125, 255), stop:1 rgba(121, 119, 143, 255));
-    box-shadow: inset 0 0 0 4px #cbd6ee; /* Добавляем эффект &quot;продавливания&quot; */
-}</string>
+    box-shadow: 0 0 0 4px #cbd6ee;</string>
     </property>
     <property name="text">
      <string>Авторизироваться</string>

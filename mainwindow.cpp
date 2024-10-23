@@ -36,7 +36,6 @@ void MainWindow::applyColorScheme(const QString &styleSheet)
 {
     this->setStyleSheet(styleSheet);  // Применение стиля к окну MainWindow
     ui->label_3->setStyleSheet(styleSheet);
-    qDebug() << styleSheet;
     // Сохранение цветовой схемы
     QSettings settings("MyCompany", "MyApp");
     settings.setValue("StyleSheet", styleSheet);
@@ -53,7 +52,14 @@ void MainWindow::loadSettings()
     // Загружаем сохраненный стиль, если он существует
     QString savedStyle = settings.value("StyleSheet", "").toString();
     if (!savedStyle.isEmpty()) {
-        this->setStyleSheet(savedStyle);
+
+        ui->label_3->setStyleSheet(savedStyle);
+        QString buttonStyle = ui->pushButton->styleSheet(); // Забираем текущие стили
+        // Добавляем или заменяем стиль background-color
+        QString fullStyle = buttonStyle + savedStyle;
+        // Применяем новый стиль
+        ui->pushButton->setStyleSheet(fullStyle);
+
     }
     qDebug() << "Наш стиль" << savedStyle;
 
@@ -77,17 +83,17 @@ void MainWindow::loadSettings()
 void MainWindow::on_pushButton_clicked()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QIBASE");
-    // db.setHostName("172.18.110.56");
-    // db.setDatabaseName("C:/ACS/Base/ACS.FDB");
-    // db.setUserName("ADM");
-    // db.setPassword("700");
-    // db.setPort(3050);
-    db.setDatabaseName("C:/ibexpert/ACS.FDB");
-    db.setUserName("SYSDBA");
-    db.setPassword("masterkey");
+    db.setHostName("172.18.110.56");
+    db.setDatabaseName("C:/ACS/Base/ACS.FDB");
+    db.setUserName("ADM");
+    db.setPassword("700");
+    db.setPort(3050);
+    // db.setDatabaseName("C:/ibexpert/ACS.FDB");
+    // db.setUserName("SYSDBA");
+    // db.setPassword("masterkey");
 
     if (!db.open()) {
-        QMessageBox::critical(this, "Ошибка соединения", "Не удалось подключиться к базе данных.");
+        qDebug() << "Не удалось подключиться к базе данных";
         return;
     }
     QString enteredLogin = ui->lineEdit->text();

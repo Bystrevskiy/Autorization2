@@ -1,7 +1,6 @@
 #include "showinfo.h"
 #include "ui_showinfo.h"
 #include <QDebug>
-#include "mainapp.h"
 #include <QCloseEvent>
 #include <QTime>
 ShowInfo::ShowInfo(QWidget *parent)
