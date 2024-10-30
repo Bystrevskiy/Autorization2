@@ -30,16 +30,19 @@ MainApp::MainApp(QWidget *parent)
     connect(socket, &QTcpSocket::errorOccurred, this, [](QAbstractSocket::SocketError socketError) {
         qDebug() << "Socket error:" << socketError;
     });
+
     ui->setupUi(this);
+    connect(ui->tableWidget->horizontalHeader(), &QHeaderView::sectionClicked, this, &MainApp::sortTableByColumn);
     ui->tableWidget->setEditTriggers(QTableWidget::NoEditTriggers);
 
-    hideUnused();
+    // hideUnused();
     QString dep = "ALL";
-    departmentSort(dep);// загрузка всей базы данных
-    ui->scrollArea->show();
-    ui->tableWidget->show();
-    ui->label_3->show();
-    ui->lineEdit->show();
+    departmentSort(dep);
+
+    // ui->scrollArea->show();
+    // ui->tableWidget->show();
+    // ui->label_3->show();
+    // ui->lineEdit->show();
     ui->tableWidget->setStyleSheet("background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font: 11pt Segoe UI");
     applySavedStyleSheet();
 
@@ -52,69 +55,135 @@ MainApp::~MainApp()
         showinfo->close();
     }
 }
+void MainApp::sortTableByColumn(int column)
+{
+    static Qt::SortOrder sortOrder = Qt::AscendingOrder;
+    ui->tableWidget->sortItems(column, sortOrder);
+    sortOrder = (sortOrder == Qt::AscendingOrder) ? Qt::DescendingOrder : Qt::AscendingOrder;
+}
+
 void MainApp::departmentSort(QString department)
 {
-    // Проверяем текущее подключение к базе данных
     QSqlDatabase db = QSqlDatabase::database();
 
-    // Очищаем таблицу перед заполнением
-    ui->tableWidget->clearContents();  // Очищаем содержимое, но сохраняем заголовки
-    ui->tableWidget->setRowCount(0);   // Устанавливаем количество строк в 0
-
-    // Устанавливаем заголовки столбцов таблицы
+    ui->tableWidget->clearContents();
+    ui->tableWidget->setRowCount(0);
     ui->tableWidget->setHorizontalHeaderLabels({"ФИО", "Отдел", "Мобильный", "Email", "Дата начала работы", "НИО", "Автомобиль"});
 
     // Подготавливаем SQL-запрос
     QSqlQuery querySort;
     if (department == "ALL") {
-        querySort.prepare("SELECT FIO, DEPARTMENT, MOBILE, MAIL, START_D, NIO, AUTO,LASTDATE, LASTTIME FROM PERSONNEL");
+        querySort.prepare("SELECT FIO, DEPARTMENT, MOBILE, MAIL, START_D, NIO, AUTO, LASTDATE, LASTTIME FROM PERSONNEL");
     } else {
         querySort.prepare("SELECT FIO, DEPARTMENT, MOBILE, MAIL, START_D, NIO, AUTO, LASTDATE, LASTTIME FROM PERSONNEL WHERE DEPARTMENT = :department");
         querySort.bindValue(":department", department);
     }
 
-    // Выполняем запрос и проверяем ошибки
     if (!querySort.exec()) {
         qDebug() << "Ошибка выполнения запроса: " << querySort.lastError().text();
         return;
     }
+
     QTime currentTime = QTime::currentTime();
     QDate currentDate = QDate::currentDate();
-    // Заполняем таблицу результатами
+
     int row = 0;
     while (querySort.next()) {
-        // Вставляем новую строку
         ui->tableWidget->insertRow(row);
 
-        // Проходим по всем столбцам и заполняем значения
-        for (int col = 0; col < querySort.record().count(); ++col) {
-            QString cellValue = querySort.value(col).toString();
-            QTableWidgetItem *item = new QTableWidgetItem(cellValue);
+        // Извлекаем нужные значения для текущей строки один раз
+        QStringList rowData = {
+            querySort.value("FIO").toString(),
+            querySort.value("DEPARTMENT").toString(),
+            querySort.value("MOBILE").toString(),
+            querySort.value("MAIL").toString(),
+            querySort.value("START_D").toString(),
+            querySort.value("NIO").toString(),
+            querySort.value("AUTO").toString()
+        };
 
-            // Преобразование строки lasttime в объект QTime с форматом hh:mm:ss
-            QString lastTimeStr = querySort.value("LASTTIME").toString();
-            QString lastDateStr = querySort.value("LASTDATE").toString();
+        QString lastTimeStr = querySort.value("LASTTIME").toString();
+        QString lastDateStr = querySort.value("LASTDATE").toString();
 
-            // Преобразуем строку в объект QTime с указанием формата (например, "hh:mm:ss" для времени)
-            QTime lastTime = QTime::fromString(lastTimeStr, "hh:mm:ss");
-            QDate lastDate = QDate::fromString(lastDateStr, "yyyy.MM.dd");
-            if(currentDate==lastDate && currentTime > lastTime){
-                for (int col = 0; col < querySort.record().count(); ++col) {
-                    QTableWidgetItem *item = new QTableWidgetItem(querySort.value(col).toString());
-                    item->setBackground(Qt::green);
-                    ui->tableWidget->setItem(row, col, item);
-                }
+        // Подготавливаем время и дату для раскраски ячеек
+        QTime lastTime = QTime::fromString(lastTimeStr, "hh:mm:ss");
+        QDate lastDate = QDate::fromString(lastDateStr, "yyyy.MM.dd");
+        bool shouldHighlight = (currentDate == lastDate && currentTime > lastTime);
+
+        // Заполняем строку данными
+        for (int col = 0; col < rowData.size(); ++col) {
+            QTableWidgetItem *item = new QTableWidgetItem(rowData[col]);
+            if (shouldHighlight) {
+                item->setBackground(Qt::green);
+                ui->tableWidget->setItem(row, col, item);
             }
-            if (!item) {
-                qDebug() << "Ошибка: не удалось создать элемент таблицы на строке " << row << ", столбце " << col;
-                continue;
+            else{
+                ui->tableWidget->setItem(row, col, item);
             }
-            ui->tableWidget->setItem(row, col, item);
+
         }
         ++row;
     }
     db.close();
 }
+
+// void MainApp::departmentSort(QString department)
+// {
+//     // Проверяем текущее подключение к базе данных
+//     QSqlDatabase db = QSqlDatabase::database();
+
+//     // Очищаем таблицу перед заполнением
+//     ui->tableWidget->clearContents();  // Очищаем содержимое, но сохраняем заголовки
+//     ui->tableWidget->setRowCount(0);   // Устанавливаем количество строк в 0
+
+//     // Устанавливаем заголовки столбцов таблицы
+//     ui->tableWidget->setHorizontalHeaderLabels({"ФИО", "Отдел", "Мобильный", "Email", "Дата начала работы", "НИО", "Автомобиль"});
+
+//     // Подготавливаем SQL-запрос
+//     QSqlQuery querySort;
+//     if (department == "ALL") {
+//         querySort.prepare("SELECT FIO, DEPARTMENT, MOBILE, MAIL, START_D, NIO, AUTO,LASTDATE, LASTTIME FROM PERSONNEL");
+
+//     } else {
+//         querySort.prepare("SELECT FIO, DEPARTMENT, MOBILE, MAIL, START_D, NIO, AUTO, LASTDATE, LASTTIME FROM PERSONNEL WHERE DEPARTMENT = :department");
+//         querySort.bindValue(":department", department);
+//     }
+
+//     // Выполняем запрос и проверяем ошибки
+//     if (!querySort.exec()) {
+//         qDebug() << "Ошибка выполнения запроса: " << querySort.lastError().text();
+//         return;
+//     }
+//     QTime currentTime = QTime::currentTime();
+//     QDate currentDate = QDate::currentDate();
+//     // Заполняем таблицу результатами
+//     int row = 0;
+//     while (querySort.next()) {
+//         // Вставляем новую строку
+//         ui->tableWidget->insertRow(row);
+
+//         // Проходим по всем столбцам и заполняем значения
+//         for (int col = 0; col < querySort.record().count(); ++col) {
+//             QString cellValue = querySort.value(col).toString();
+//             QTableWidgetItem *item = new QTableWidgetItem(cellValue);
+
+//             // Преобразование строки lasttime в объект QTime с форматом hh:mm:ss
+//             QString lastTimeStr = querySort.value("LASTTIME").toString();
+//             QString lastDateStr = querySort.value("LASTDATE").toString();
+
+//             // Преобразуем строку в объект QTime с указанием формата (например, "hh:mm:ss" для времени)
+//             QTime lastTime = QTime::fromString(lastTimeStr, "hh:mm:ss");
+//             QDate lastDate = QDate::fromString(lastDateStr, "yyyy.MM.dd");
+//             if(currentDate==lastDate && currentTime > lastTime){
+//                     item->setBackground(Qt::green);
+//             }
+
+//             ui->tableWidget->setItem(row, col, item);
+//         }
+//         ++row;
+//     }
+//     db.close();
+// }
 
 
 void MainApp::on_tableWidget_cellDoubleClicked(int row, int /*column*/)
@@ -178,14 +247,6 @@ void MainApp::on_tableWidget_cellDoubleClicked(int row, int /*column*/)
 }
 
 
-
-
-void MainApp::on_actionProducts_triggered()
-{
-    hideUnused();
-    ui->label->setText("Работает");
-}
-
 void MainApp::setColorTheme(QString styleSheet)
 {
     ui->label_3->setStyleSheet(styleSheet);
@@ -212,54 +273,6 @@ void MainApp::setColorTheme(QString styleSheet)
     ui->pushButton_2->setStyleSheet(styleSheet);
     ui->pushButton_3->setStyleSheet(styleSheet);
     ui->label_2->setStyleSheet(styleSheet);
-}
-
-
-void MainApp::on_actionMessages_triggered()
-{
-    hideUnused();
-    ui-> label->setText("Почта");
-}
-
-
-void MainApp::on_actionPersonnel_triggered()
-{
-    hideUnused();
-    ui->label_3->show();
-    ui->lineEdit->show();
-    ui->scrollArea->show();
-    ui->tableWidget->show();
-}
-
-
-
-void MainApp::on_actionAccount_triggered()
-{
-    hideUnused();
-    ui->department->show();
-    ui->car->show();
-    ui->email->show();
-    ui->dolzhnost->show();
-    ui->fio->show();
-    ui->photo->show();
-    ui->mobile->show();
-    ui->departmentInfo->show();
-    ui->carInfo->show();
-    ui->dolzhnostInfo->show();
-    ui->welcome->show();
-    ui->emailImfo->show();
-    ui->date->show();
-    ui->time->show();
-    ui->mobileInfo->show();
-    ui->time_to_home->show();
-    ui->date->show();
-    ui->date_2->show();
-    ui->tabelnomer->show();
-    ui->tableWidget->hide();
-    ui->label_2->show();
-    ui->pushButton->show();
-    ui->pushButton_2->show();
-    ui->pushButton_3->show();
 }
 
 void MainApp::slotAccount(QPixmap &a, QString &name, QString &mobilephone, QString &department, QString &mail, QString &car, QString &tablenomer, QString &doljnost, QString &lasttime, QString &lastdate)
@@ -327,14 +340,14 @@ void MainApp::hideUnused(){
     ui->fio->hide();
     ui->photo->hide();
     ui->mobile->hide();
-    ui->label->hide();
+    //ui->label->hide();
     ui->pushButton->hide();
     ui->pushButton_2->hide();
     ui->pushButton_3->hide();
-    ui->outMessage->hide();
-    ui->connect->hide();
-    ui->textBrowser->hide();
-    ui->sendMessage->hide();
+    // ui->outMessage->hide();
+    // ui->connect->hide();
+    // ui->textBrowser->hide();
+    // ui->sendMessage->hide();
     ui->scrollArea->hide();
 }
 // _________________________________________
@@ -368,10 +381,10 @@ void MainApp::slotReadyRead()
         QString str;
         in >> str;
         qDebug() << "Received on server: " << str;
-        ui->textBrowser->append(str);
+        // ui->textBrowser->append(str);
     }
     else{
-        ui->textBrowser->append("read error");
+        // ui->textBrowser->append("read error");
     }
 
 }
@@ -379,15 +392,15 @@ void MainApp::slotReadyRead()
 
 void MainApp::on_sendMessage_clicked()
 {
-    SendToServer(ui->outMessage->text());
-    ui->outMessage->clear();
+    // SendToServer(ui->outMessage->text());
+    // ui->outMessage->clear();
 }
 
 
 void MainApp::on_outMessage_returnPressed()
 {
-    SendToServer(ui->outMessage->text());
-    ui->outMessage->clear();
+    // SendToServer(ui->outMessage->text());
+    // ui->outMessage->clear();
 }
 
 void MainApp::saveStyleSheet(const QString &styleSheet)
@@ -433,21 +446,20 @@ void MainApp::applySavedStyleSheet()
         ui->scrollAreaWidgetContents->setStyleSheet(savedStyleSheet+setFont);
         ui->label_3->setStyleSheet(savedStyleSheet+setFont);
         ui->lineEdit->setStyleSheet(savedStyleSheet+setFont);
+        ui->tab->setStyleSheet(savedStyleSheet+setFont);
+        ui->tab_2->setStyleSheet(savedStyleSheet+setFont);
         ui->tableWidget->setStyleSheet("");
         ui->tableWidget->setStyleSheet("background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font: 11pt Segoe UI");
     }
 }
-
-
-
-// Пример использования при запуске программы
-
 
 void MainApp::applyStyleSheet(const QString &styleSheet, const QString &setFont) {
     // Применяем стиль ко всем компонентам через главное окно
     this->setStyleSheet(styleSheet+setFont);
     ui->scrollArea->setStyleSheet(styleSheet+setFont);
     ui->scrollAreaWidgetContents->setStyleSheet(styleSheet+setFont);
+    ui->tab->setStyleSheet(styleSheet+setFont);
+    ui->tab_2->setStyleSheet(styleSheet+setFont);
     emit colorSchemeChanged(styleSheet);
     qDebug() << "Emit colorSchemeChanged with: " << styleSheet;
 }

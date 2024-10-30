@@ -180,7 +180,7 @@ public:
 
     void retranslateUi(QWidget *ShowInfo)
     {
-        ShowInfo->setWindowTitle(QCoreApplication::translate("ShowInfo", "Form", nullptr));
+        ShowInfo->setWindowTitle(QCoreApplication::translate("ShowInfo", "\320\230\320\275\321\204\320\273\321\200\320\274\320\260\321\206\320\270\321\217 \320\276 \321\201\320\276\321\202\321\200\321\203\320\264\320\275\320\270\320\272\320\265", nullptr));
         photo->setText(QString());
         label_12->setText(QCoreApplication::translate("ShowInfo", "label_12", nullptr));
         label_11->setText(QCoreApplication::translate("ShowInfo", "label_11", nullptr));

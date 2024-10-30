@@ -8,11 +8,14 @@ ShowInfo::ShowInfo(QWidget *parent)
     , ui(new Ui::ShowInfo)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() | Qt::WindowTitleHint | Qt::WindowMinimizeButtonHint);
+    setFixedSize(1099, 469);
 }
 
 ShowInfo::~ShowInfo()
 {
     delete ui;
+
 }
 
 void ShowInfo::slot(QPixmap a)

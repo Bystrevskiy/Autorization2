@@ -23,13 +23,8 @@ public:
 private slots:
     void on_tableWidget_cellDoubleClicked(int row, int column);
     void SendToServer(QString str);
-    void on_actionProducts_triggered();
     void setColorTheme(QString s);
-    void on_actionMessages_triggered();
-
-    void on_actionPersonnel_triggered();
-
-    void on_actionAccount_triggered();
+    void sortTableByColumn(int column);
     void hideUnused();
     void on_connect_clicked();
 
@@ -38,7 +33,6 @@ private slots:
     void on_outMessage_returnPressed();
     void applyStyleSheet(const QString &a, const QString &font);
     void on_pushButton_clicked();
-    void loadTableWidget();
     void on_pushButton_2_clicked();
     void saveStyleSheet(const QString &styleSheet);
     void saveSetFont(const QString &setFont);

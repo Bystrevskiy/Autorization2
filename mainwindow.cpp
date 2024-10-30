@@ -12,9 +12,13 @@
 MainWindow::MainWindow(MainApp *appInstance, QWidget *parent)
     : QMainWindow(parent),
     ui(new Ui::MainWindow)
+
 {
 
     ui->setupUi(this);
+    setWindowFlags(windowFlags() | Qt::WindowTitleHint | Qt::WindowMinimizeButtonHint);
+    setFixedSize(776, 490);
+
     connect(appInstance, &MainApp::colorSchemeChanged, this, &MainWindow::applyColorScheme);
     loadSettings();
     ui->centralwidget->setAttribute(Qt::WA_TranslucentBackground);
@@ -36,6 +40,7 @@ void MainWindow::applyColorScheme(const QString &styleSheet)
 {
     this->setStyleSheet(styleSheet);  // Применение стиля к окну MainWindow
     ui->label_3->setStyleSheet(styleSheet);
+    qDebug() << styleSheet;
     // Сохранение цветовой схемы
     QSettings settings("MyCompany", "MyApp");
     settings.setValue("StyleSheet", styleSheet);
@@ -93,7 +98,7 @@ void MainWindow::on_pushButton_clicked()
     // db.setPassword("masterkey");
 
     if (!db.open()) {
-        qDebug() << "Не удалось подключиться к базе данных";
+        qDebug() << "База данных не открыта";
         return;
     }
     QString enteredLogin = ui->lineEdit->text();
