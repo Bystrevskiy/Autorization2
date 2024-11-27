@@ -48,7 +48,7 @@ public:
         if (ShowInfo->objectName().isEmpty())
             ShowInfo->setObjectName(QString::fromUtf8("ShowInfo"));
         ShowInfo->resize(1099, 469);
-        ShowInfo->setStyleSheet(QString::fromUtf8("background-color: rgb(4, 83, 125);"));
+        ShowInfo->setStyleSheet(QString::fromUtf8(""));
         photo = new QLabel(ShowInfo);
         photo->setObjectName(QString::fromUtf8("photo"));
         photo->setGeometry(QRect(30, 30, 311, 311));
@@ -63,35 +63,35 @@ public:
         label_12 = new QLabel(layoutWidget);
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255);"));
+""));
 
         verticalLayout_2->addWidget(label_12);
 
         label_11 = new QLabel(layoutWidget);
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255);"));
+""));
 
         verticalLayout_2->addWidget(label_11);
 
         label_15 = new QLabel(layoutWidget);
         label_15->setObjectName(QString::fromUtf8("label_15"));
         label_15->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255);"));
+""));
 
         verticalLayout_2->addWidget(label_15);
 
         label_9 = new QLabel(layoutWidget);
         label_9->setObjectName(QString::fromUtf8("label_9"));
         label_9->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255);"));
+""));
 
         verticalLayout_2->addWidget(label_9);
 
         label_7 = new QLabel(layoutWidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255);"));
+""));
 
         verticalLayout_2->addWidget(label_7);
 
@@ -105,35 +105,35 @@ public:
         label_13 = new QLabel(layoutWidget1);
         label_13->setObjectName(QString::fromUtf8("label_13"));
         label_13->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255);"));
+""));
 
         verticalLayout->addWidget(label_13);
 
         label_10 = new QLabel(layoutWidget1);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255);"));
+""));
 
         verticalLayout->addWidget(label_10);
 
         label_5 = new QLabel(layoutWidget1);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255);"));
+""));
 
         verticalLayout->addWidget(label_5);
 
         label_14 = new QLabel(layoutWidget1);
         label_14->setObjectName(QString::fromUtf8("label_14"));
         label_14->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255);"));
+""));
 
         verticalLayout->addWidget(label_14);
 
         label_4 = new QLabel(layoutWidget1);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255);"));
+""));
 
         verticalLayout->addWidget(label_4);
 
@@ -141,27 +141,27 @@ public:
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(40, 370, 321, 42));
         label_6->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255);"));
+""));
         label_16 = new QLabel(ShowInfo);
         label_16->setObjectName(QString::fromUtf8("label_16"));
         label_16->setGeometry(QRect(720, 370, 171, 44));
         label_16->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255);"));
+""));
         label_17 = new QLabel(ShowInfo);
         label_17->setObjectName(QString::fromUtf8("label_17"));
         label_17->setGeometry(QRect(360, 370, 131, 44));
         label_17->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255);"));
+""));
         label_18 = new QLabel(ShowInfo);
         label_18->setObjectName(QString::fromUtf8("label_18"));
         label_18->setGeometry(QRect(540, 370, 161, 44));
         label_18->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255);"));
+""));
         label_19 = new QLabel(ShowInfo);
         label_19->setObjectName(QString::fromUtf8("label_19"));
         label_19->setGeometry(QRect(720, 410, 171, 44));
         label_19->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255);"));
+""));
         label = new QLabel(ShowInfo);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(360, 10, 721, 44));
@@ -171,7 +171,7 @@ public:
         label_20->setObjectName(QString::fromUtf8("label_20"));
         label_20->setGeometry(QRect(360, 410, 261, 44));
         label_20->setStyleSheet(QString::fromUtf8("font: 14pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255);"));
+""));
 
         retranslateUi(ShowInfo);
 

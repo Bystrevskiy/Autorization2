@@ -10,6 +10,7 @@
 #include <QTime>
 #include <QDate>
 #include <server.h>
+#include "showinfo.h"
 #include <QMainWindow>
 #include <QTcpSocket>
 #include <QSettings>
@@ -194,7 +195,7 @@ void MainApp::on_tableWidget_cellDoubleClicked(int row, int /*column*/)
     }
 
     if (!showinfo) {
-        showinfo = new ShowInfo;
+        showinfo = new ShowInfo(this);
         connect(this, &MainApp::signal, showinfo, &ShowInfo::slot);
         connect(this, &MainApp::signalname, showinfo, &ShowInfo::slotname);
     }
@@ -355,7 +356,7 @@ void MainApp::hideUnused(){
 void MainApp::on_connect_clicked() {
     qDebug() << "Trying to connect...";
     if (socket->state() == QAbstractSocket::UnconnectedState) {
-        socket->connectToHost("192.168.56.1", 3702);
+        socket->connectToHost("192.168.56.1", 0000 );
         qDebug() << "Connecting...";
     } else {
         qDebug() << "Socket is already connected or connecting.";
@@ -625,7 +626,11 @@ void MainApp::on_depAll_clicked()
 void MainApp::on_lineEdit_cursorPositionChanged()
 {
     QString depNum = ui->lineEdit->text();
-    if(depNum == "1" or depNum == "9"){
+    if(depNum.size()==0){
+        QString dep = "ALL";
+        departmentSort(dep);
+    }
+    else if(depNum.size() < 2 && depNum.size()!=0){
         departmentSort("ОТДЕЛ 0"+depNum);
     }
     else{
